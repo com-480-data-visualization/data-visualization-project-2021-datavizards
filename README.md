@@ -12,10 +12,13 @@
 
 **10% of the final grade**
 
+Visualization about the top movies on IMDb before 2016.
+<!--
 This is a preliminary milestone to let you set up goals for your final project and assess the feasibility of your ideas.
 Please, fill the following sections about your project.
 
 *(max. 2000 characters per section)*
+-->
 
 ### Dataset
 
@@ -23,11 +26,27 @@ Please, fill the following sections about your project.
 >
 > Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)), you could use also the DataSets proposed by the ENAC (see the Announcements section on Zulip).
 
+There is no single unique dataset which aligns perfectly with our project idea. Hence, we are going to use the following three datasets from Kaggle:
+1. [IMDB Data from 2006 to 2016](https://www.kaggle.com/PromptCloudHQ/imdb-data): It contains the top 1000 movies on IMDb from 2006 to 2016. It will serve as the primary dataset since it contains relevant data fields such as the director, actors, revenue, rating and metascore for each movie. 
+2. [IMDB 5000 Movie Dataset](https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset): It contains useful information about 5000 movies on IMDb movies upto 2016. It will serve as the secondary dataset as we will extract only the useful fields instead of the complete dataset. It contains additional data fields such as the movie budget and the number of likes (depicting popularity) on the director, actors and movie facebook pages.
+3. [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset): It is a humongous dataset which contains metadata for 45000 movies with 43 data fields distributed over 7 files. It will serve as the backup for any missing or conflicting fields in the other two datasets.
+
+The chosen datasets are good-quality credible datasets from Kaggle. They are properly labelled, verified, cleaned, and available for free as CSV files. However, some amount of work is required to combine the primary dataset with useful fields from the secondary dataset:
+- Explore and organise the primary dataset as the main source of data
+- Add the movie budget and any other fields from the secondary dataset
+- Expand the actor field to multiple columns (to match with the secondary dataset)
+- Add the number of likes for the movie, director and actor facebook pages
+- Filter out any correupted datapoints which cannot be corrected using the backup dataset
+
 ### Problematic
 
 > Frame the general topic of your visualization and the main axis that you want to develop.
 > - What am I trying to show with my visualization?
 > - Think of an overview for the project, your motivation, and the target audience.
+
+The project is inspired from the [Directors and their Stars webpage](https://www.nytimes.com/newsgraphics/2013/09/07/director-star-chart/index.html) presented in Lecture 2 of the course. It motivated us to think about the influence of the directors and their choice of actors for a particular movie. We want to extend this idea by considering multiple factors involved in movie-making including the director, actors, their popularity, movie budget etc. and explore how they correlate to the success of the movie. The success of the movie can be measure in terms of IMDb score, audience score and the revenue earned. After some basic data analysis, this idea can be visualized using various charts depicting the relation between the input factors to the movie success. 
+
+The visualization will consist of a webpage with a general overview and our key findings. There will be multiple tabs on the webpage to explore the influence of the input factors (director, actors, popularity, budget etc.) individually. Other than showing the mappings and highlighting important trends, we will also show additional information about the movie and directors with mouse hovering. This webpage will help movie audiences, critics and aspiring film students to explore and understand the reasons behind the success of the top movies on IMDb. 
 
 ### Exploratory Data Analysis
 
