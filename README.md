@@ -53,6 +53,8 @@ The visualization will consist of a webpage with a general overview and our key 
 > Pre-processing of the data set you chose
 > - Show some basic statistics and get insights about the data
 
+The [Preprocessing notebook](IMDB_Preprocessing.ipynb) shows the basic statistics for the primary dataset. It also highlights some interesting trends about the data, followed by preliminary data cleaning and extraction. Finally, we merge the useful fields from the secondary dataset. Please note that we plan to add additional data from the backup dataset only if our current dataset doesn't suffice for the visualization.
+
 ### Related work
 
 
