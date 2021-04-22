@@ -44,9 +44,9 @@ The chosen datasets are good-quality credible datasets from Kaggle. They are pro
 > - What am I trying to show with my visualization?
 > - Think of an overview for the project, your motivation, and the target audience.
 
-As shown by the [Directors and their Stars webpage][] (Lecture 2), the relationship between an actor and a director might indicate an artistic understanding, a functional routine, or even a marketing strategy. The visualization targets enthusiasts, critics, and workers of the movie industry. We want to investigate how successful such partnerships are by analyzing their results regarding multiple factors involved in the movie industry. These factors should include the number of movies made together, their budget, revenue, and IMDb/audience score.
+As shown by the [Directors and their Stars webpage][] (Lecture 2), the relationship between an actor and a director might indicate an artistic understanding, a functional routine, or even a marketing strategy. We want to investigate the success of such partnerships by analyzing the results with respect to multiple factors involved in the movie industry. These factors should include the number of movies made together, their budget, revenue and IMDb/audience score. The idea is targetted towards enthusiasts, critics, and workers of the movie industry.
 
-The visualization will consist of a webpage with a general overview and our key findings. It should have one graph structure in which vertices represent actors and directors, and edges represent their relationship, i.e., if they worked together. A user should be able to click on the edges to investigate the relationship further. On a click, the visualization should focus on the vertices (director and actor) involved and break the edge down into multiples edges, one for each movie done together.  It should also show data about the partnership's history: a timeline with the movies and our metrics for success.
+The visualization will consist of a webpage with a general overview and our key findings. It will have one graph structure in which the vertices represent actors and directors, and the edges represent their relationship, i.e., if they worked together. A user should be able to click on the edges to investigate the relationship further. On a click, the visualization will focus on the vertices (director and actor) involved and break the edge down into multiples edges, one for each movie done together. It will also show data about the partnership's history: a timeline with the movies and our metrics for success.
 
 ### Exploratory Data Analysis
 
@@ -62,9 +62,9 @@ The [preprocessing notebook](IMDB_Preprocessing.ipynb) shows the basic statistic
 > - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
 > - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
 
-We have always been enthusiastic about pop culture, especially movies. Thus finding a dataset related to the entertainment industry was on our radar from the very beginning. We did not find many related works to this specific dataset that worth mentioning. Most of them are a simple plot of the information and lack any objective analysis. (One can learn about the highest-rated movie or the one with more considerable revenue, but that about it.)
+We have always been enthusiastic about pop culture, especially movies. Thus finding a dataset related to the entertainment industry was on our radar from the very beginning. We did not find many related works to this specific visualization that is worth mentioning. Most of them consist of a simple plot with the information and lack any objective analysis (For example, one can learn about the highest-rated movie or the one with more considerable revenue, but that's about it).
 
-We used the [Directors and their Stars webpage][] as inspiration for our proposal. It instigated us to think about the existence of such partnerships. On our work, we plan to go beyond and take a look into their success. 
+We used the [Directors and their Stars webpage][] as an inspiration for our proposal. It instigated us to think about the existence of such partnerships. Through our work, we plan to go beyond and take a look into the success of such relationships. 
 
 ## Milestone 2 (7th May, 5pm)
 
