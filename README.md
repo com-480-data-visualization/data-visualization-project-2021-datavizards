@@ -44,9 +44,9 @@ The chosen datasets are good-quality credible datasets from Kaggle. They are pro
 > - What am I trying to show with my visualization?
 > - Think of an overview for the project, your motivation, and the target audience.
 
-The project is inspired from the [Directors and their Stars webpage](https://www.nytimes.com/newsgraphics/2013/09/07/director-star-chart/index.html) presented in Lecture 2 of the course. It motivated us to think about the influence of the directors and their choice of actors for a particular movie. We want to extend this idea by considering multiple factors involved in movie-making including the director, actors, their popularity, movie budget etc. and explore how they correlate to the success of the movie. The success of the movie can be measure in terms of IMDb score, audience score and the revenue earned. After some basic data analysis, this idea can be visualized using various charts depicting the relation between the input factors to the movie success. 
+As shown by the [Directors and their Stars webpage][] (Lecture 2), the relationship between an actor and a director might indicate an artistic understanding, a functional routine, or even a marketing strategy. We want to investigate the success of such partnerships by analyzing the results with respect to multiple factors involved in the movie industry. These factors should include the number of movies made together, their budget, revenue and IMDb/audience score. The idea is targetted towards enthusiasts, critics, and workers of the movie industry.
 
-The visualization will consist of a webpage with a general overview and our key findings. There will be multiple tabs on the webpage to explore the influence of the input factors (director, actors, popularity, budget etc.) individually. Other than showing the mappings and highlighting important trends, we will also show additional information about the movie and directors with mouse hovering. This webpage will help movie audiences, critics and aspiring film students to explore and understand the reasons behind the success of the top movies on IMDb. 
+The visualization will consist of a webpage with a general overview and our key findings. It will have one graph structure in which the vertices represent actors and directors, and the edges represent their relationship, i.e., if they worked together. A user should be able to click on the edges to investigate the relationship further. On a click, the visualization will focus on the vertices (director and actor) involved and break the edge down into multiples edges, one for each movie done together. It will also show data about the partnership's history: a timeline with the movies and our metrics for success.
 
 ### Exploratory Data Analysis
 
@@ -61,6 +61,10 @@ The [preprocessing notebook](IMDB_Preprocessing.ipynb) shows the basic statistic
 > - Why is your approach original?
 > - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
 > - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+
+We have always been enthusiastic about pop culture, especially movies. Thus finding a dataset related to the entertainment industry was on our radar from the very beginning. We did not find many related works to this specific visualization that is worth mentioning. Most of them consist of a simple plot with the information and lack any objective analysis (For example, one can learn about the highest-rated movie or the one with more considerable revenue, but that's about it).
+
+We used the [Directors and their Stars webpage][] as an inspiration for our proposal. It instigated us to think about the existence of such partnerships. Through our work, we plan to go beyond and take a look into the success of such relationships. 
 
 ## Milestone 2 (7th May, 5pm)
 
@@ -77,3 +81,4 @@ The [preprocessing notebook](IMDB_Preprocessing.ipynb) shows the basic statistic
 - < 24h: 80% of the grade for the milestone
 - < 48h: 70% of the grade for the milestone
 
+[Directors and their Stars webpage]: https://www.nytimes.com/newsgraphics/2013/09/07/director-star-chart/index.html
