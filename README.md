@@ -62,14 +62,14 @@ The [preprocessing notebook](IMDB_Preprocessing.ipynb) shows the basic statistic
 > - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
 > - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
 
-We have always been enthusiastic about pop culture, especially movies. Thus finding a dataset related to the entertainment industry was on our radar from the very beginning. We did not find many related works to this specific visualization that is worth mentioning. Most of them consist of a simple plot with the information and lack any objective analysis (For example, one can learn about the highest-rated movie or the one with more considerable revenue, [but][] [that's][] [about][] [it][]).
+We have always been enthusiastic about pop culture, especially movies. Thus finding a dataset related to the entertainment industry was on our radar from the very beginning. We did not find many related works to this specific visualization that is worth mentioning. Most of them consist of a simple plot with the information and lack any objective analysis (For example, one can learn about the highest-rated movie or the one with more considerable revenue, [but][] ... [that's][] ... [about][] ... [it][]).
 
 We used the [Directors and their Stars webpage][] as an inspiration for our proposal. It instigated us to think about the existence of such partnerships. Through our work, we plan to go beyond and take a look into the success of such relationships. 
 
-[but]: https://www.kaggle.com/batuhaneralpofficial/imdb-loves-war
+[but]: https://public.tableau.com/profile/milo8469#!/vizhome/Lab2_174/Dashboard1
 [that's]: https://www.kaggle.com/unofficialmerve/imdb-exploratory-data-analysis
 [about]: https://www.kaggle.com/ambujbhardwaj/imdb-dataset-analysis-report
-[it]: https://public.tableau.com/profile/milo8469#!/vizhome/Lab2_174/Dashboard1
+[it]: https://www.kaggle.com/batuhaneralpofficial/imdb-loves-war
 
 ## Milestone 2 (7th May, 5pm)
 
