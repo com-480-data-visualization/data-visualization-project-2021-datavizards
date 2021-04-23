@@ -12,7 +12,7 @@
 
 **10% of the final grade**
 
-Visualization about the top movies on IMDb before 2016.
+Visualization about the director-stars success in the top IMDb movies.
 <!--
 This is a preliminary milestone to let you set up goals for your final project and assess the feasibility of your ideas.
 Please, fill the following sections about your project.
@@ -44,7 +44,7 @@ The chosen datasets are good-quality credible datasets from Kaggle. They are pro
 > - What am I trying to show with my visualization?
 > - Think of an overview for the project, your motivation, and the target audience.
 
-As shown by the [Directors and their Stars webpage][] (Lecture 2), the relationship between an actor and a director might indicate an artistic understanding, a functional routine, or even a marketing strategy. We want to investigate the success of such partnerships by analyzing the results with respect to multiple factors involved in the movie industry. These factors should include the number of movies made together, their budget, revenue and IMDb/audience score. The idea is targetted towards enthusiasts, critics, and workers of the movie industry.
+As shown by the [Directors and their Stars webpage][] (Lecture 2), the relationship between an actor and a director might indicate an artistic understanding, a functional routine, or even a marketing strategy. We want to investigate the success of such partnerships by analyzing the results with respect to multiple factors involved in the movie industry. These factors should include the number of movies made together, their budget, revenue and IMDb/audience score. The idea is targetted towards enthusiasts, critics, and students of the movie industry.
 
 The visualization will consist of a webpage with a general overview and our key findings. It will have one graph structure in which the vertices represent actors and directors, and the edges represent their relationship, i.e., if they worked together. A user should be able to click on the edges to investigate the relationship further. On a click, the visualization will focus on the vertices (director and actor) involved and break the edge down into multiples edges, one for each movie done together. It will also show data about the partnership's history: a timeline with the movies and our metrics for success.
 
