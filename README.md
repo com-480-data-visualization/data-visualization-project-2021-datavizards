@@ -75,7 +75,9 @@ We used the [Directors and their Stars webpage][] as an inspiration for our prop
 
 **10% of the final grade**
 
-The project will have a main webpage for welcoming the user. It will contain useful links, credits and description of the project. We will use a navigation bar to take the user to another page which will contain our data visualization. The basic idea can be found in the attached picture, and the functional prototype with the skeleton code can be viewed here. (add links for picture and website ...)
+The project will have a main webpage for welcoming the user. It will contain useful links, credits and description of the project. We will use a navigation bar to take the user to another page which will contain our data visualization. The basic idea can be found in the attached picture below, and the functional prototype with the skeleton code can be viewed here. (add links for picture and website ...)
+
+![Website Sketch](Sketch.jpg "Website Sketch")
 
 ### Basic Idea Sketch
 TBD: In progress...
@@ -91,7 +93,7 @@ The page will also contain a toggle button using which the user can select the p
 The page also contains a secondary visualization - 'on-click' side window, which will contain multiple charts and information as descibed below. This will be interactively connected to the main graph network. The interactions can be described as follows:
 - On-click: When any edge of the graph network is clicked, it will be expanded into multiple branches. The number of branches is equal to the number of movies done together by the director-actor pair. Further, the on-click window will be triggered by the click, thus, choosing the director-actor pair for visualization.
 - On-click window: The window will be located on the right side of the webpage. It will feature a line-graph for the movies done by the chosen director-actor pair. The x-axis represents different movies done over time. And the y-axis represents the measure of 'success' (IMDb rating or movie revenue). In case of the movie revenue as 'success', we will also represent the movie budget on the chart.
-- On-hover: When the mouse is hovered accross the expanded edges on the graph network or on the window's line chart, both of them are highlighted and the movie name is displayed. We can also add a link in the window to take the user to the IMDb's movie page.
+- On-hover: When the mouse is hovered across the expanded edges on the graph network or on the window's line chart, both of them are highlighted and the movie name is displayed. We can also add a link in the window to take the user to the IMDb's movie page. Further, when the mouse is hovered over the vertices, the director and actor names can be seen (on hovering the non-expanded edge, the name of the pair can be seen). 
 
 ### Design Goals
 After brainstorming the ideas and visual elements, the final project goals can be described as follows:
