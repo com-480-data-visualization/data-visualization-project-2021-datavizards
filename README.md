@@ -8,6 +8,15 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
+## Getting Started
+
+```shell
+cd website
+python3 -m http.server 8888
+
+# Go to http://localhost:8888
+```
+
 ## Milestone 1 (23rd April, 5pm)
 
 **10% of the final grade**
@@ -80,9 +89,11 @@ The project will have a main webpage for welcoming the user. It will contain use
 ![Website Sketch](Sketch.jpg "Website Sketch")
 
 ### Basic Idea Sketch
+
 TBD: In progress...
 
 ### Primary Visualization - Graph Network
+
 As described in [Milestone 1](#milestone-1), our aim is to study and present the relationship between the directors and actors of various IMDb movies. This relationship will be represented using the primary visualization - a graph network, where the vertices represent directors and actors and the edges represent their relationship, i.e., if they worked together. To be specific, we plan to use a [force-directed-graph][] with the following design elements:
 - Vertices: We will use bigger sized circles for directors, and smaller sized circles for actors. We will also use two distinct 'neutral' colors (as described in next point) for the directors and actors for easier distinction. We will make sure to choose colorblind-friendly color schemes.
 - Edges: An edge between a director and actor is constructed only if they have done at least 2 movies together. The thickness of the edge will represent the strength of the relationship i.e. proportional to the number of movies done together. Further, the color of the edge will reflect the 'success' of the relationship i.e. color gradient based on the IMDb score or the movie revenue. The color gradient will move from a 'positive' class to 'neutral' to a 'negative' class. 
@@ -90,12 +101,14 @@ As described in [Milestone 1](#milestone-1), our aim is to study and present the
 The page will also contain a toggle button using which the user can select the parameter to represent the 'success' of a movie. There will be 2 possibilities - IMDb rating or movie revenue. On toggle, the color of the edges will change accordingly, and it will also change the secondary visualization.
 
 ### Secondary Visualization - Side Window
+
 The page also contains a secondary visualization - 'on-click' side window, which will contain multiple charts and information as descibed below. This will be interactively connected to the main graph network. The interactions can be described as follows:
 - On-click: When any edge of the graph network is clicked, it will be expanded into multiple branches. The number of branches is equal to the number of movies done together by the director-actor pair. Further, the on-click window will be triggered by the click, thus, choosing the director-actor pair for visualization.
 - On-click window: The window will be located on the right side of the webpage. It will feature a line-graph for the movies done by the chosen director-actor pair. The x-axis represents different movies done over time. And the y-axis represents the measure of 'success' (IMDb rating or movie revenue). In case of the movie revenue as 'success', we will also represent the movie budget on the chart.
 - On-hover: When the mouse is hovered across the expanded edges on the graph network or on the window's line chart, both of them are highlighted and the movie name is displayed. We can also add a link in the window to take the user to the IMDb's movie page. Further, when the mouse is hovered over the vertices, the director and actor names can be seen (on hovering the non-expanded edge, the name of the pair can be seen). 
 
 ### Design Goals
+
 After brainstorming the ideas and visual elements, the final project goals can be described as follows:
 1. We created the functional prototype for the website. We have some skeleton code ready on which we will build the project. It has been submitted as part of this milestone, and can be found here. (add link ...)
 2. The core design will contain the main webpage for welcome, and a second page with the previously descibed 2 visualizations - graph network and side window. First, we will consider only the the movie revenue as the 'success' parameter, and hence, there will be no toggle button. This will constitute as the minimum viable product. 
@@ -111,11 +124,12 @@ After brainstorming the ideas and visual elements, the final project goals can b
 	- We will add a compare option to the side window, so that the user can choose from 2 to 5 (upper bound arbitrarily chosen for cleanliness) director-actor pairs to be displayed in the main line chart. 
 
 ### Tools and Lectures required
+
 TBD: Add links and desciptions.
 
 ### Functional prototype
-TBD: Add some desciptions and screenshots for the graph network and the side window.
 
+TBD: Add some desciptions and screenshots for the graph network and the side window.
 
 ## Milestone 3 (4th June, 5pm)
 
