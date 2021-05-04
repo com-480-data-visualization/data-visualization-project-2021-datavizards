@@ -1,5 +1,5 @@
-var width = window.innerWidth * .5;
-var height = window.innerHeight * .5;
+var width = window.innerWidth * .8;
+var height = window.innerHeight * .8;
 var svg = d3.select("div.constellation").append("svg")
     .attr("width", width)
     .attr("height", height)

@@ -84,13 +84,11 @@ We used the [Directors and their Stars webpage][] as an inspiration for our prop
 
 **10% of the final grade**
 
-The project will have a main webpage for welcoming the user. It will contain useful links, credits and description of the project. We will use a navigation bar to take the user to another page which will contain our data visualization. The basic idea can be found in the attached picture below, and the functional prototype with the skeleton code can be viewed here. (add links for picture and website ...)
+The project will have a main webpage for welcoming the user. It will contain useful links, credits and description of the project. We will use a navigation bar to take the user to another page which will contain our data visualization. The basic idea as well as the functional prototype/skeleon are found below:
 
-![Website Sketch](Sketch.jpg "Website Sketch")
-
-### Basic Idea Sketch
-
-TBD: In progress...
+![Website Sketch](images/website_sketch.jpg "Website Sketch")
+![Website Sketch](images/website_prototype_1.png "Website Prototype main page")
+![Website Sketch](images/website_prototype_2.png "Website Prototype constellation")
 
 ### Primary Visualization - Graph Network
 
@@ -110,7 +108,7 @@ The page also contains a secondary visualization - 'on-click' side window, which
 ### Design Goals
 
 After brainstorming the ideas and visual elements, the final project goals can be described as follows:
-1. We created the functional prototype for the website. We have some skeleton code ready on which we will build the project. It has been submitted as part of this milestone, and can be found here. (add link ...)
+1. We created the functional prototype for the website. We have some skeleton code ready on which we will build the project. It has been submitted as part of this milestone (please refer to **Functional prototype** further down in the README).
 2. The core design will contain the main webpage for welcome, and a second page with the previously descibed 2 visualizations - graph network and side window. First, we will consider only the the movie revenue as the 'success' parameter, and hence, there will be no toggle button. This will constitute as the minimum viable product. 
 3. Next, we will add some core features - we will definitely add these features by the end of the project:
 	- We will add the toggle button to choose between the IMDb rating and movie revenue as the movie 'success' parameter.
@@ -125,11 +123,18 @@ After brainstorming the ideas and visual elements, the final project goals can b
 
 ### Tools and Lectures required
 
-TBD: Add links and desciptions.
+* [Tool] [D3-force graph](https://github.com/d3/d3-force)
+* [Tool] [Jekyll](https://jekyllrb.com)
+* [Lectures] Lectures on D3 (Week 4-5)
+* [Lectures] Lecture on graphs (Wekk 11)
 
 ### Functional prototype
 
-TBD: Add some desciptions and screenshots for the graph network and the side window.
+The website can be launched locally by following the **Getting Started** instructions at the top of this README.
+
+Below is what the graph of directors/actor look like now:
+
+![](images/graph_animation.gif)
 
 ## Milestone 3 (4th June, 5pm)
 
