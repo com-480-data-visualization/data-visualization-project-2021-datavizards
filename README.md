@@ -6,7 +6,7 @@
 | David Dieulivol | 185078 |
 | Bruno Schmitt | 279392 |
 
-[Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
+[Milestone 1](#milestone-1-23rd-april-5pm) • [Milestone 2](#milestone-2-7th-may-5pm) • [Milestone 3](#milestone-3-4th-june-5pm)
 
 ## Getting Started
 
