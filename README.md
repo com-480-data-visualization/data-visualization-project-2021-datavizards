@@ -130,7 +130,7 @@ After brainstorming the ideas and visual elements, the final project goals can b
 
 ### Functional prototype
 
-The website can be launched locally by following the **Getting Started** instructions at the top of this README.
+The website can be launched locally by following the [Getting Started instructions](#getting-started) at the top of this README.
 
 Below is what the graph of directors/actor look like now:
 
