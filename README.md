@@ -82,48 +82,49 @@ We used the [Directors and their Stars webpage][] as an inspiration for our prop
 
 **10% of the final grade**
 
-The project website will be a single-window application with a main page for welcoming the user. It will contain useful links, credits and description of the project. We will use a navigation bar (and scrolling) to take the user to another page which will contain our data visualization.
+The project website will be a single-window application with the main page for welcoming the user. It will contain helpful links, credits, and a description of the project. We will use a navigation bar (and scrolling) to take the user to another page that will contain our data visualization.
 
 ### Website Idea - Sketch and Screenshots
 
-Following sketch illustrates our website idea with the welcome page and the visualization:
+The following sketch illustrates our website idea with the welcome page and the visualization:
 
 ![Website Sketch](images/website_sketch.jpg "Website Sketch")
 
-Following screenshots are taken from the functional prototype in the [website folder](website):
+The following screenshots were taken from the functional prototype in the [website folder](website):
 
 ![Website Prototype main page](images/website_prototype_1.png "Website Prototype main page")
 ![Website Prototype constellation](images/website_prototype_2.png "Website Prototype constellation")
 
 ### Primary Visualization - Graph Network
 
-As described in [Milestone 1][], our aim is to study and present the relationship between the directors and actors of various IMDb movies. This relationship will be represented using the primary visualization - a graph network, where the vertices represent directors and actors, and the edges represent their relationship, i.e., if they worked together. To be specific, we plan to use a [force-directed-graph](https://github.com/d3/d3-force) with the following design elements:
-- Vertices: We will use bigger-sized circles for directors, and smaller-sized circles for actors. We will also use two distinct 'neutral' colors (as described in the next point) for the directors and actors for easier distinction. We will make sure to choose colorblind-friendly color schemes.
-- Edges: An edge between a director and an actor is constructed only if they have done at least 2 movies together. The thickness of the edge will represent the strength of the relationship i.e. proportional to the number of movies done together. Further, the color of the edge will reflect the 'success' of the relationship i.e. color gradient based on the IMDb score or the movie revenue. The color gradient will move from a 'positive' class to 'neutral' to a 'negative' class.
+As described in [Milestone 1][], we aim to study and present the relationship between the directors and actors of various movies. We represent this relationship using a graph in which the vertices represent directors and actors, and the edges represent their relationship, i.e., if they worked together. To be specific, we plan to use a [force-directed-graph](https://github.com/d3/d3-force) with the following design elements:
 
-The page will also contain a toggle button using which the user can select the parameter to represent the 'success' of a movie. There will be 2 possibilities - IMDb rating or movie revenue. On toggle, the color of the edges will change accordingly, and it will also change the secondary visualization.
+- Vertices: We will use bigger-sized circles for directors and smaller-sized circles for actors. We will also use two distinct 'neutral' colors (as described in the next point) for the directors and actors for more straightforward distinction. We will make sure to choose colorblind-friendly color schemes.
+- Edges: An edge between a director and an actor indicate that they have worked on at least two movies together. Its thickness will represent the strength of the relationship, i.e., proportional to the number of movies done together. Moreover, the edge color will reflect the relationship's success, i.e., color gradient based on the IMDb score or the movie revenue. The color gradient will move from a 'positive' class to 'neutral' to a 'negative' class.
+
+The page will also contain a toggle button to select the parameter to represent a movie's 'success'. There will be two possibilities: IMDb rating and movie revenue. On toggle, the color of the edges will change accordingly, and it will also change the secondary visualization.
 
 ### Secondary Visualization - Side Window
 
-The page also contains a secondary visualization - 'on-click' side window, which will contain multiple charts and information as described below. This will be interactively connected to the main graph network. The interactions can be described as follows:
-- On-click: When any edge of the graph network is clicked, it will be expanded into multiple branches. The number of branches is equal to the number of movies done together by the director-actor pair. Further, the on-click window will be triggered by the click, thus, choosing the director-actor pair for visualization.
-- Side window: The window will be located on the right side of the webpage. It will feature a line-graph for the movies done by the chosen director-actor pair. The x-axis represents different movies done over time. And the y-axis represents the measure of 'success' (IMDb rating or movie revenue). In case of the movie revenue as 'success', we will also represent the movie budget on the chart.
-- On-hover: When the mouse is hovered across the expanded edges on the graph network or on the window's line chart, both of them are highlighted and the movie name is displayed. On hovering any non-expanded edge, the name of the director-actor pair can be seen. Further, when hovered over the vertices, the director/actor name can be seen.
+The page will also contain a secondary visualization: an on-click side window with multiple charts. The information and interactions contained on this side window are the following:
+- On-click: Clicking on edge triggers an event for further inspecting the relationship between a director-actor pair. The clicked edge will expand into multiple edges on the graph: one for each movie done together. The side window will appear with further information.
+- Side window: The window will appear on the right side of the webpage, featuring a chart showing the pair's success for each movie. When using revenue as a measure of success, we will also include the movie budget on the chart.
+- On-hover: Actors, directors, and movie names only appear on certain hover events to avoid cluttering the visualization. For example, when hovering any non-expanded edge, the name of the director-actor pair should appear.
 
 ### Design Goals
 
-After brainstorming sessions and functional prototype design, the final project goals can be described as follows:
-1. The core design will contain the main welcome page and a second page with the previously described 2 visualizations - graph network and side window. First, we will consider only the movie revenue as the 'success' parameter, and hence, there will be no toggle button. This will constitute as the minimum viable product.
-2. Next, we will add some core features - we will definitely add these features by the end of the project:
-	- We will add the toggle button to choose between the IMDb rating and movie revenue as the movie 'success' parameter.
-	- We will add a ranking system, which will rank the director-actor pairs based on the chosen 'success' parameter. This will be featured as a filter bar on the top of the page, which can be used to display a subset N entries out of all the director-actor pairs in the graph network. For filtering, we will either mask or gray out the removed pairs from the visualization.
-	- We have chosen the theme of stars and space, drawing a pun on movie 'stars' and actual stars. We will make the website more aesthetically pleasing based on this theme, using background pictures or some dynamic style.
-3. Finally, we will add some additional features - we will add these features depending on the relevance and time-availability. These are presented below in **no particular order** of preference:
-	- We will make the graph network cleaner by representing it as a vertically long, scrollable and zoomable network. We will try to rearrange it such that there are minimum overlapping edges for better visibility.
-	- We will add 2 more line-charts to the side window. Other than the original director-actor pair's line chart, we will also display individual director and actor movies line chart showing the same information, but with all their movies (instead of being restricted to that pair). It will displayed as a collapsible section in the side window. The user can choose to display or not display these additional charts.
-	- Apart from the basic filter presented in the core features, we will add additional filters to display a subset of the graph network depending on the available movie metadata - time of movie release, genres, language of the movie, country of origin of the movie. This will use a similar masking / graying out mechanism as before.
-	- We will add a search bar, where the user can search for a particular director, actor and/or movie name. If available, the corresponding vertex or edge will be highlighted or zoomed in.
-	- We will add a compare option to the side window, so that the user can choose from 2 to 5 (upper bound arbitrarily chosen for cleanliness) director-actor pairs to be displayed in the main line chart.
+After brainstorming sessions and functional prototype design, the final project goals are:
+1. The core design will contain the main welcome page and a second page with the previously described two visualizations---the graph and the side window. The minimum viable product will consider only the movie revenue as the 'success' parameter, and hence, there will be no toggle button.
+2. We will add these features by the end of the project:
+	- Toggle button to choose between the IMDb rating and movie revenue as the movie 'success' parameter.
+	- A filter bar on the top of the page should allow selecting, based on a ranking, a subset of director-actor pairs to appear on the graph. For filtering, we will either mask or gray out the removed pairs from the visualization.
+	- We have chosen the theme of stars and space, drawing a pun on movie 'stars' and real stars. We will make the website more aesthetically pleasing based on this theme, using background pictures or some dynamic style.
+3. We will add these features depending on the relevance and time availability. These are presented below in **no particular order** of preference:
+	- We will make the graph cleaner by representing it as a vertically extended, scrollable, and zoomable graph. We will try to rearrange it such that there are minimum overlapping edges for better visibility.
+	- We will add extra charts to the side window. These charts should provide more information about the director and the actor while not being restricted to the pair. The user can choose whether to display or not these additional charts.
+	- We will add additional filters to display a subset of the graph depending on the available movie metadata: release date, genres, language, country of origin.
+	- We will add a search bar to search for a particular director, actor, and/or movie name. If available, the corresponding vertex or edge will be highlighted or zoomed in.
+	- We will add a compare option to the side window so that the user can choose from 2 to 5 (upper bound arbitrarily chosen for cleanliness) director-actor pairs to be displayed in the central chart.
 
 ### Tools and Lectures Required
 
