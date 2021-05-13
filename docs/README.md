@@ -1,7 +1,7 @@
 ## Develop on the site
 
 ```shell
-cd ~/src/data-visualization-project-2021-datavizards/website
+cd ~/src/data-visualization-project-2021-datavizards/docs
 
 # Requires ruby
 #
@@ -16,6 +16,6 @@ bundle exec jekyll serve
 
 ## Where is the code?
 
-JS: `website/js/constellation.js`
-CSS: `website/css/` (`constellation.css`/`main.scss`/...)
-HTML: `website/_includes_/*.html`
+JS: `docs/js/constellation.js`
+CSS: `docs/css/` (`constellation.css`/`main.scss`/...)
+HTML: `docs/_includes_/*.html`
