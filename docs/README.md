@@ -16,6 +16,6 @@ bundle exec jekyll serve
 
 ## Where is the code?
 
-JS: `docs/js/constellation.js`
-CSS: `docs/css/` (`constellation.css`/`main.scss`/...)
-HTML: `docs/_includes_/*.html`
+* JS: `docs/js/constellation.js`
+* CSS: `docs/css/` (`constellation.css`/`main.scss`/...)
+* HTML: `docs/_includes_/*.html`
