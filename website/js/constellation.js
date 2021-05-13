@@ -116,8 +116,17 @@ d3.json("result.json", function (error, graph) {
 });
 
 // Add zoom capabilities 
+// 
+// To disable just wheel-driven zooming (say to not interfere with native scrolling), 
+// you can remove the zoom behavior’s wheel event listener after
+// applying the zoom behavior to the selection.
+// 
+// Alternatively, use zoom.filter for greater control over which events can initiate zoom gestures.
+// 
+// https://github.com/d3/d3-zoom#_zoom
 var zoom_handler = d3.zoom()
-    .on("zoom", zoom_actions);
+    .on("zoom", zoom_actions)
+    .on("wheel.zoom", null);
 
 zoom_handler(svg);
 

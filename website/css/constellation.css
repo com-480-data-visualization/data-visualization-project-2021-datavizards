@@ -12,3 +12,8 @@ text {
     font-family: sans-serif;
     font-size: 10px;
 }
+
+#constellation_svg {
+  position: relative;
+  width: 100%;
+}
