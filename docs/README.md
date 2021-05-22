@@ -1,4 +1,4 @@
-## Develop on the graph
+## Develop on the constellation (a.k.a. the graph)
 
 ```shell
 cd ~/src/data-visualization-project-2021-datavizards/docs
