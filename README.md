@@ -12,14 +12,7 @@
 
 The functional prototype and skeleton code for [Milestone 2][] can be found in the [website folder](website). The website has not been hosted yet, hence, please ```git clone``` the repository to your local machine for now.
 
-The website can be easily viewed on Atom using the [atom-live-server package][] to start a server. Alternatively, enter the following commands on terminal to start a server:
-
-```shell
-cd website
-python3 -m http.server 8888
-
-# Go to http://localhost:8888 on your browser
-```
+The website is located at https://dataviz.daviddieulivol.com.
 
 ## Milestone 1 (23rd April, 5pm)
 
