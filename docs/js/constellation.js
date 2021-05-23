@@ -1,46 +1,59 @@
+// Constants
 const width  = window.innerWidth;
 const height = window.innerHeight;
+const color  = d3.scaleOrdinal(d3.schemeCategory20);
+
+// Construct the main SVG
 const svg = d3.select("div#constellation_svg")
   .append("svg")
   .attr("width", width)
   .attr("height", height)
 
-const color = d3.scaleOrdinal(d3.schemeCategory20);
-
+// Creates the force graph
+// 
+// More info at https://github.com/d3/d3-force
 const simulation = d3.forceSimulation()
-  .force("link", d3.forceLink().id(function (d) { return d.id; }))
+  .force("link", d3.forceLink().id(d => d.id))
   .force("charge", d3.forceManyBody().strength(-5))
   .force("center", d3.forceCenter(width / 2, height / 2))
   .force("collide", d3.forceCollide().radius(5));
 
-// Add encompassing group for the zoom 
+// Add encompassing group for the zoom
+// 
+// TODO: Describe what this does exactly, and why we need it here.
 const g = svg.append("g")
   .attr("class", "everything");
 
-d3.json("result.json", function (error, graph) {
+// Graph has two keys: "nodes" and "links"
+d3.json("result.json", (error, graph) => {
   if (error)
     throw error;
 
+  // Internal list used by isConnected().
   const linkedByIndex = {};
-  graph.links.forEach(function (d) {
-    linkedByIndex[d.source + "," + d.target] = true;
-  });
+  graph.links.forEach(link => linkedByIndex[link.source + "," + link.target] = true);
 
-  function isConnected(a, b) {
-    return linkedByIndex[a.id + "," + b.id] || linkedByIndex[b.id + "," + a.id] || a.id == b.id;
+  function areNodesConnected(nodeA, nodeB) {
+    return linkedByIndex[nodeA.id + "," + nodeB.id] || linkedByIndex[nodeB.id + "," + nodeA.id] || nodeA.id == nodeB.id;
   }
 
-  const idToNode = {};
-  graph.nodes.forEach(function (n) {
-    idToNode[n.id] = n;
-  })
+  function isLinkConnectedToNode(link, node) {
+    return link.source === node || link.target === node
+  }
 
-  const link = g.append("g").attr("class", "links").selectAll("line")
+  // Data structure that allows us to directly call idToNode['Ben Affleck']
+  // to get a node instead of knowing its ID in the array.
+  const idToNode = {};
+  graph.nodes.forEach(node => idToNode[node.id] = node)
+
+  // The edges we see on the graph
+  const links = g.append("g").attr("class", "links").selectAll("line")
     .data(graph.links)
     .enter().append("line")
     .attr("stroke-width", function (d) { return Math.sqrt(d.value); });
 
-  const node = g.append("g").attr("class", "nodes").selectAll("g")
+  // The nodes we see on the graph
+  const nodes = g.append("g").attr("class", "nodes").selectAll("g")
     .data(graph.nodes)
     .enter().append("circle")
     .attr("r", 5)
@@ -50,45 +63,40 @@ d3.json("result.json", function (error, graph) {
       .on("drag", dragged)
       .on("end", drag_end));
 
+  // The text above the nodes
   const text = g.append("g").attr("class", "labels").selectAll("g")
     .data(graph.nodes)
-    .enter().append("g")
+    .enter()
+    .append("g")
     .append("text")
     .attr("x", 7)
     .attr("y", ".31em")
     .style("font-family", "sans-serif")
     .style("font-size", "0.7em")
-    .text(function (d) { return d.id; });
+    .text(node => node.id);
 
-  node.append("title")
-    .text(function (d) { return d.id; });
+  // TODO: Can we remove this? I don't see where it's used...
+  nodes.append("title").text(node => node.id);
 
-  node
-    .on('mouseover', function (d) {
-      // Highlight the node and its neighbors
-      node
-        .style('opacity', function (n_d) {
-            return isConnected(d, n_d) ? 1 : 0.1; 
-        })
-      // Highlight the connections
-      link
-        .style('stroke', function (link_d) {
-          return link_d.source === idToNode[d.id] || link_d.target === idToNode[d.id] ? '#69b3b2' : '#b8b8b8'; 
-        })
-        .style('stroke-width', function (link_d) { 
-          return link_d.source === idToNode[d.id] || link_d.target === idToNode[d.id] ? 4 : 1; 
-        })
-        .style('opacity', function (link_d) { 
-          return link_d.source === idToNode[d.id] || link_d.target === idToNode[d.id] ? 1 : 0.6; 
-        })
-    })
-    .on('mouseout', function (d) {
-      node.style('opacity', 1)
-      link
-        .style('stroke', 'black')
-        .style('stroke-width', 1)
-        .style('opacity', 0.6)
-    });
+  nodes.on('mouseover', selectedNode => {
+    // Highlight the selected node and all of the neighboring nodes
+    // 
+    // TODO: Only highlights direct neighbors: we should highlight
+    // all of the nodes reachable from the current node.
+    nodes.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
+
+    // Highlight all of the relevant links
+    links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? '#69b3b2' : '#b8b8b8')
+      .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)
+      .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6)
+  })
+  .on('mouseout', () => {
+    // Reset style for ALL nodes and ALL links
+    nodes.style('opacity', 1);
+    links.style('stroke', 'black')
+      .style('stroke-width', 1)
+      .style('opacity', 0.6);
+  });
 
   simulation.nodes(graph.nodes)
     .on("tick", ticked);
@@ -97,17 +105,15 @@ d3.json("result.json", function (error, graph) {
     .links(graph.links);
 
   function ticked() {
-    node.attr("cx", function (d) { return d.x; })
-      .attr("cy", function (d) { return d.y; });
+    nodes.attr("cx", d => d.x )
+      .attr("cy", d => d.y);
 
-    link.attr("x1", function (d) { return d.source.x; })
-      .attr("y1", function (d) { return d.source.y; })
-      .attr("x2", function (d) { return d.target.x; })
-      .attr("y2", function (d) { return d.target.y; });
+    links.attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
 
-    text.attr("transform", function (d) {
-      return "translate(" + d.x + "," + d.y + ")";
-    });
+    text.attr("transform", d => "translate(" + d.x + "," + d.y + ")");
   }
 });
 
@@ -121,7 +127,8 @@ d3.json("result.json", function (error, graph) {
 // 
 // https://github.com/d3/d3-zoom#_zoom
 const zoom_handler = d3.zoom()
-  .on("zoom", zoom_actions)
+  // TODO: Doesn't work on D3 v4 anymore...
+  // .on("zoom", zoom_actions)
   .on("wheel.zoom", null);
 
 zoom_handler(svg);
