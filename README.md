@@ -10,9 +10,7 @@
 
 ## Getting Started
 
-The functional prototype and skeleton code for [Milestone 2][] can be found in the [website folder](website). The website has not been hosted yet, hence, please ```git clone``` the repository to your local machine for now.
-
-The website is located at https://dataviz.daviddieulivol.com.
+The website is located [here](https://dataviz.daviddieulivol.com).
 
 ## Milestone 1 (23rd April, 5pm)
 
@@ -53,7 +51,7 @@ The visualization will consist of a webpage with a general overview and our key 
 > Pre-processing of the data set you chose
 > - Show some basic statistics and get insights about the data
 
-The [preprocessing notebook](IMDB_Preprocessing.ipynb) shows the basic statistics for the primary dataset. It also highlights some interesting trends about the data, followed by preliminary data cleaning and extraction. Finally, we merge the useful fields from the secondary dataset. Please note that we plan to add additional data from the backup dataset only if our current dataset doesn't suffice for the visualization.
+The [preprocessing notebook](notebooks/milestone1_preprocessing.ipynb) shows the basic statistics for the primary dataset. It also highlights some interesting trends about the data, followed by preliminary data cleaning and extraction. Finally, we merge the useful fields from the secondary dataset. Please note that we plan to add additional data from the backup dataset only if our current dataset doesn't suffice for the visualization.
 
 ### Related work
 
@@ -83,7 +81,7 @@ The following sketch illustrates our website idea with the welcome page and the 
 
 ![Website Sketch](images/website_sketch.jpg "Website Sketch")
 
-The following screenshots were taken from the functional prototype in the [website folder](website):
+The following screenshots were taken from the functional prototype in the [website folder](docs):
 
 ![Website Prototype main page](images/website_prototype_1.png "Website Prototype main page")
 ![Website Prototype constellation](images/website_prototype_2.png "Website Prototype constellation")
@@ -129,7 +127,7 @@ Most of the concepts required for the website are elegantly simple and inspiring
 
 ### Functional Prototype
 
-Please find the code for the functional prototype in the [website folder](website). It can be launched locally by following the [Getting Started instructions](#getting-started) at the top of this README file.
+Please find the code for the functional prototype in the [website folder](docs). It can be launched by following the [Getting Started instructions](#getting-started) at the top of this README file.
 
 An animation depicting the graph network on the current skeleton version of the website can be found below:
 

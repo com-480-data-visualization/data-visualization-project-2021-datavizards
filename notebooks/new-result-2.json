@@ -5,10 +5,6 @@
       "group": 1
     },
     {
-      "id": "Alejandro G. Iñárritu",
-      "group": 1
-    },
-    {
       "id": "Alex Kendrick",
       "group": 1
     },
@@ -58,10 +54,6 @@
     },
     {
       "id": "Ben Affleck",
-      "group": 1
-    },
-    {
-      "id": "Ben Falcone",
       "group": 1
     },
     {
@@ -241,10 +233,6 @@
       "group": 1
     },
     {
-      "id": "Eli Roth",
-      "group": 1
-    },
-    {
       "id": "Eric Darnell",
       "group": 1
     },
@@ -309,10 +297,6 @@
       "group": 1
     },
     {
-      "id": "Guillermo del Toro",
-      "group": 1
-    },
-    {
       "id": "Gurinder Chadha",
       "group": 1
     },
@@ -350,10 +334,6 @@
     },
     {
       "id": "J.J. Abrams",
-      "group": 1
-    },
-    {
-      "id": "Jake Kasdan",
       "group": 1
     },
     {
@@ -402,10 +382,6 @@
     },
     {
       "id": "Jean-Pierre Jeunet",
-      "group": 1
-    },
-    {
-      "id": "Jeff Nichols",
       "group": 1
     },
     {
@@ -489,10 +465,6 @@
       "group": 1
     },
     {
-      "id": "Joon-ho Bong",
-      "group": 1
-    },
-    {
       "id": "Joss Whedon",
       "group": 1
     },
@@ -506,10 +478,6 @@
     },
     {
       "id": "Karan Johar",
-      "group": 1
-    },
-    {
-      "id": "Kathryn Bigelow",
       "group": 1
     },
     {
@@ -777,10 +745,6 @@
       "group": 1
     },
     {
-      "id": "Rob Marshall",
-      "group": 1
-    },
-    {
       "id": "Rob Minkoff",
       "group": 1
     },
@@ -846,10 +810,6 @@
     },
     {
       "id": "Shawn Levy",
-      "group": 1
-    },
-    {
-      "id": "Simon West",
       "group": 1
     },
     {
@@ -961,10 +921,6 @@
       "group": 1
     },
     {
-      "id": "Wes Ball",
-      "group": 1
-    },
-    {
       "id": "Wes Craven",
       "group": 1
     },
@@ -994,10 +950,6 @@
     },
     {
       "id": "Will Ferrell",
-      "group": 2
-    },
-    {
-      "id": "Naomi Watts",
       "group": 2
     },
     {
@@ -1089,15 +1041,7 @@
       "group": 2
     },
     {
-      "id": "Ben Falcone",
-      "group": 2
-    },
-    {
       "id": "Ben Stiller",
-      "group": 2
-    },
-    {
-      "id": "Milla Jovovich",
       "group": 2
     },
     {
@@ -1149,10 +1093,6 @@
       "group": 2
     },
     {
-      "id": "Jennifer Lawrence",
-      "group": 2
-    },
-    {
       "id": "Kevin Spacey",
       "group": 2
     },
@@ -1201,10 +1141,6 @@
       "group": 2
     },
     {
-      "id": "Rosario Dawson",
-      "group": 2
-    },
-    {
       "id": "Catherine O'Hara",
       "group": 2
     },
@@ -1221,15 +1157,7 @@
       "group": 2
     },
     {
-      "id": "Joseph Gordon-Levitt",
-      "group": 2
-    },
-    {
       "id": "Michael Caine",
-      "group": 2
-    },
-    {
-      "id": "Tom Hardy",
       "group": 2
     },
     {
@@ -1277,10 +1205,6 @@
       "group": 2
     },
     {
-      "id": "Rachael Harris",
-      "group": 2
-    },
-    {
       "id": "Robert Capron",
       "group": 2
     },
@@ -1313,10 +1237,6 @@
       "group": 2
     },
     {
-      "id": "Zooey Deschanel",
-      "group": 2
-    },
-    {
       "id": "Aasif Mandvi",
       "group": 2
     },
@@ -1334,6 +1254,10 @@
     },
     {
       "id": "Bradley Cooper",
+      "group": 2
+    },
+    {
+      "id": "Jennifer Lawrence",
       "group": 2
     },
     {
@@ -1365,10 +1289,6 @@
       "group": 2
     },
     {
-      "id": "America Ferrera",
-      "group": 2
-    },
-    {
       "id": "Craig Ferguson",
       "group": 2
     },
@@ -1389,19 +1309,7 @@
       "group": 2
     },
     {
-      "id": "Jon Lovitz",
-      "group": 2
-    },
-    {
       "id": "Kevin James",
-      "group": 2
-    },
-    {
-      "id": "Kevin Nealon",
-      "group": 2
-    },
-    {
-      "id": "Steve Buscemi",
       "group": 2
     },
     {
@@ -1429,10 +1337,6 @@
       "group": 2
     },
     {
-      "id": "Jay Hernandez",
-      "group": 2
-    },
-    {
       "id": "Andy Richter",
       "group": 2
     },
@@ -1450,10 +1354,6 @@
     },
     {
       "id": "Josh Brolin",
-      "group": 2
-    },
-    {
-      "id": "Stephen Root",
       "group": 2
     },
     {
@@ -1501,10 +1401,6 @@
       "group": 2
     },
     {
-      "id": "Frank Grillo",
-      "group": 2
-    },
-    {
       "id": "Noah Emmerich",
       "group": 2
     },
@@ -1537,10 +1433,6 @@
       "group": 2
     },
     {
-      "id": "Elizabeth Daily",
-      "group": 2
-    },
-    {
       "id": "Jack Davenport",
       "group": 2
     },
@@ -1553,10 +1445,6 @@
       "group": 2
     },
     {
-      "id": "Brian Steele",
-      "group": 2
-    },
-    {
       "id": "Anupam Kher",
       "group": 2
     },
@@ -1566,10 +1454,6 @@
     },
     {
       "id": "Lois Maxwell",
-      "group": 2
-    },
-    {
-      "id": "Eddie Marsan",
       "group": 2
     },
     {
@@ -1613,10 +1497,6 @@
       "group": 2
     },
     {
-      "id": "Nat Faxon",
-      "group": 2
-    },
-    {
       "id": "Jenette Goldstein",
       "group": 2
     },
@@ -1634,10 +1514,6 @@
     },
     {
       "id": "Clea DuVall",
-      "group": 2
-    },
-    {
-      "id": "Barbara Hershey",
       "group": 2
     },
     {
@@ -1785,10 +1661,6 @@
       "group": 2
     },
     {
-      "id": "Jon Favreau",
-      "group": 2
-    },
-    {
       "id": "Jonathan Frakes",
       "group": 2
     },
@@ -1802,18 +1674,6 @@
     },
     {
       "id": "M.C. Gainey",
-      "group": 2
-    },
-    {
-      "id": "Kang-ho Song",
-      "group": 2
-    },
-    {
-      "id": "Chris Hemsworth",
-      "group": 2
-    },
-    {
-      "id": "Charlyne Yi",
       "group": 2
     },
     {
@@ -1837,10 +1697,6 @@
       "group": 2
     },
     {
-      "id": "Christian Camargo",
-      "group": 2
-    },
-    {
       "id": "Brittany Daniel",
       "group": 2
     },
@@ -1854,10 +1710,6 @@
     },
     {
       "id": "Brian Blessed",
-      "group": 2
-    },
-    {
-      "id": "Derek Jacobi",
       "group": 2
     },
     {
@@ -1878,10 +1730,6 @@
     },
     {
       "id": "Jason Mewes",
-      "group": 2
-    },
-    {
-      "id": "Jeff Anderson",
       "group": 2
     },
     {
@@ -1949,10 +1797,6 @@
       "group": 2
     },
     {
-      "id": "Ray Winstone",
-      "group": 2
-    },
-    {
       "id": "Kodi Smit-McPhee",
       "group": 2
     },
@@ -1961,15 +1805,7 @@
       "group": 2
     },
     {
-      "id": "Glenn Morshower",
-      "group": 2
-    },
-    {
       "id": "Josh Duhamel",
-      "group": 2
-    },
-    {
-      "id": "Kevin Dunn",
       "group": 2
     },
     {
@@ -1978,6 +1814,10 @@
     },
     {
       "id": "Megan Fox",
+      "group": 2
+    },
+    {
+      "id": "Steve Buscemi",
       "group": 2
     },
     {
@@ -2049,10 +1889,6 @@
       "group": 2
     },
     {
-      "id": "Ike Barinholtz",
-      "group": 2
-    },
-    {
       "id": "Rose Byrne",
       "group": 2
     },
@@ -2089,19 +1925,15 @@
       "group": 2
     },
     {
-      "id": "Jim Meskimen",
-      "group": 2
-    },
-    {
       "id": "Joaquin Phoenix",
       "group": 2
     },
     {
-      "id": "Boris Kodjoe",
+      "id": "Colin Salmon",
       "group": 2
     },
     {
-      "id": "Colin Salmon",
+      "id": "Milla Jovovich",
       "group": 2
     },
     {
@@ -2113,23 +1945,11 @@
       "group": 2
     },
     {
-      "id": "Adam Brown",
-      "group": 2
-    },
-    {
-      "id": "Aidan Turner",
-      "group": 2
-    },
-    {
       "id": "Billy Boyd",
       "group": 2
     },
     {
       "id": "Ian McKellen",
-      "group": 2
-    },
-    {
-      "id": "James Nesbitt",
       "group": 2
     },
     {
@@ -2146,18 +1966,6 @@
     },
     {
       "id": "Jonah Hill",
-      "group": 2
-    },
-    {
-      "id": "Angelina Jolie Pitt",
-      "group": 2
-    },
-    {
-      "id": "Miranda Cosgrove",
-      "group": 2
-    },
-    {
-      "id": "Christoph Waltz",
       "group": 2
     },
     {
@@ -2281,15 +2089,11 @@
       "group": 2
     },
     {
-      "id": "Matt Craven",
-      "group": 2
-    },
-    {
-      "id": "Sela Ward",
-      "group": 2
-    },
-    {
       "id": "Adam Goldberg",
+      "group": 2
+    },
+    {
+      "id": "Chris Hemsworth",
       "group": 2
     },
     {
@@ -2301,15 +2105,15 @@
       "group": 2
     },
     {
-      "id": "Rory Kinnear",
-      "group": 2
-    },
-    {
       "id": "Bridget Fonda",
       "group": 2
     },
     {
       "id": "Kirsten Dunst",
+      "group": 2
+    },
+    {
+      "id": "Jon Favreau",
       "group": 2
     },
     {
@@ -2334,6 +2138,10 @@
     },
     {
       "id": "Delroy Lindo",
+      "group": 2
+    },
+    {
+      "id": "Rosario Dawson",
       "group": 2
     },
     {
@@ -2421,10 +2229,6 @@
       "group": 2
     },
     {
-      "id": "Ki Hong Lee",
-      "group": 2
-    },
-    {
       "id": "David Arquette",
       "group": 2
     },
@@ -2438,10 +2242,6 @@
     },
     {
       "id": "Jeffrey Combs",
-      "group": 2
-    },
-    {
-      "id": "Judy Davis",
       "group": 2
     },
     {
@@ -2544,27 +2344,6 @@
         26000000
       ],
       "counts": 5
-    },
-    {
-      "source": "Alejandro G. Iñárritu",
-      "target": "Naomi Watts",
-      "title": [
-        "birdman or (the unexpected virtue of ignorance)",
-        "21 grams"
-      ],
-      "imdb_rating": [
-        7.8,
-        7.7
-      ],
-      "revenue": [
-        42335698,
-        16248701
-      ],
-      "budget": [
-        18000000,
-        20000000
-      ],
-      "counts": 2
     },
     {
       "source": "Alex Kendrick",
@@ -3041,27 +2820,6 @@
       "counts": 2
     },
     {
-      "source": "Ben Falcone",
-      "target": "Ben Falcone",
-      "title": [
-        "the boss",
-        "tammy"
-      ],
-      "imdb_rating": [
-        5.3,
-        4.9
-      ],
-      "revenue": [
-        63034755,
-        84518155
-      ],
-      "budget": [
-        29000000,
-        20000000
-      ],
-      "counts": 2
-    },
-    {
       "source": "Ben Stiller",
       "target": "Ben Stiller",
       "title": [
@@ -3085,27 +2843,6 @@
         50000000
       ],
       "counts": 3
-    },
-    {
-      "source": "Ben Stiller",
-      "target": "Milla Jovovich",
-      "title": [
-        "zoolander 2",
-        "zoolander"
-      ],
-      "imdb_rating": [
-        4.8,
-        6.6
-      ],
-      "revenue": [
-        28837115,
-        45162741
-      ],
-      "budget": [
-        50000000,
-        28000000
-      ],
-      "counts": 2
     },
     {
       "source": "Ben Stiller",
@@ -3428,27 +3165,6 @@
     },
     {
       "source": "Bryan Singer",
-      "target": "Jennifer Lawrence",
-      "title": [
-        "x-men: days of future past",
-        "x-men: apocalypse"
-      ],
-      "imdb_rating": [
-        8,
-        7.3
-      ],
-      "revenue": [
-        233914986,
-        154985087
-      ],
-      "budget": [
-        200000000,
-        178000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Bryan Singer",
       "target": "Kevin Spacey",
       "title": [
         "superman returns",
@@ -3721,27 +3437,6 @@
       "counts": 2
     },
     {
-      "source": "Chris Columbus",
-      "target": "Rosario Dawson",
-      "title": [
-        "percy jackson & the olympians: the lightning thief",
-        "rent"
-      ],
-      "imdb_rating": [
-        5.9,
-        7
-      ],
-      "revenue": [
-        88761720,
-        29077547
-      ],
-      "budget": [
-        95000000,
-        40000000
-      ],
-      "counts": 2
-    },
-    {
       "source": "Christopher Guest",
       "target": "Catherine O'Hara",
       "title": [
@@ -3860,27 +3555,6 @@
     },
     {
       "source": "Christopher Nolan",
-      "target": "Joseph Gordon-Levitt",
-      "title": [
-        "the dark knight rises",
-        "inception"
-      ],
-      "imdb_rating": [
-        8.5,
-        8.8
-      ],
-      "revenue": [
-        448130642,
-        292568851
-      ],
-      "budget": [
-        250000000,
-        160000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Christopher Nolan",
       "target": "Michael Caine",
       "title": [
         "the dark knight",
@@ -3897,48 +3571,6 @@
       "budget": [
         185000000,
         40000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Christopher Nolan",
-      "target": "Morgan Freeman",
-      "title": [
-        "the dark knight",
-        "batman begins"
-      ],
-      "imdb_rating": [
-        9,
-        8.3
-      ],
-      "revenue": [
-        533316061,
-        205343774
-      ],
-      "budget": [
-        185000000,
-        150000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Christopher Nolan",
-      "target": "Tom Hardy",
-      "title": [
-        "the dark knight rises",
-        "inception"
-      ],
-      "imdb_rating": [
-        8.5,
-        8.8
-      ],
-      "revenue": [
-        448130642,
-        292568851
-      ],
-      "budget": [
-        250000000,
-        160000000
       ],
       "counts": 2
     },
@@ -4104,34 +3736,26 @@
       "source": "Darren Aronofsky",
       "target": "Mark Margolis",
       "title": [
-        "the fountain",
-        "black swan",
         "the wrestler",
         "requiem for a dream",
         "pi"
       ],
       "imdb_rating": [
-        7.3,
-        8,
         7.9,
         8.4,
         7.5
       ],
       "revenue": [
-        10139254,
-        106952327,
         26236603,
         3609278,
         3216970
       ],
       "budget": [
-        35000000,
-        13000000,
         6000000,
         4500000,
         60000
       ],
-      "counts": 5
+      "counts": 3
     },
     {
       "source": "Darren Lynn Bousman",
@@ -4224,27 +3848,6 @@
     {
       "source": "David Bowers",
       "target": "Devon Bostick",
-      "title": [
-        "diary of a wimpy kid: dog days",
-        "diary of a wimpy kid: rodrick rules"
-      ],
-      "imdb_rating": [
-        6.4,
-        6.6
-      ],
-      "revenue": [
-        49002815,
-        52691009
-      ],
-      "budget": [
-        22000000,
-        21000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "David Bowers",
-      "target": "Rachael Harris",
       "title": [
         "diary of a wimpy kid: dog days",
         "diary of a wimpy kid: rodrick rules"
@@ -4457,27 +4060,6 @@
       "budget": [
         2500000,
         42000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "David Gordon Green",
-      "target": "Zooey Deschanel",
-      "title": [
-        "your highness",
-        "all the real girls"
-      ],
-      "imdb_rating": [
-        5.6,
-        6.9
-      ],
-      "revenue": [
-        21557240,
-        548712
-      ],
-      "budget": [
-        49900000,
-        2500000
       ],
       "counts": 2
     },
@@ -4831,27 +4413,6 @@
     },
     {
       "source": "Dean DeBlois",
-      "target": "America Ferrera",
-      "title": [
-        "how to train your dragon",
-        "how to train your dragon 2"
-      ],
-      "imdb_rating": [
-        8.2,
-        7.9
-      ],
-      "revenue": [
-        217387997,
-        176997107
-      ],
-      "budget": [
-        165000000,
-        145000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Dean DeBlois",
       "target": "Craig Ferguson",
       "title": [
         "how to train your dragon",
@@ -4977,27 +4538,6 @@
     },
     {
       "source": "Dennis Dugan",
-      "target": "Jon Lovitz",
-      "title": [
-        "grown ups 2",
-        "the benchwarmers"
-      ],
-      "imdb_rating": [
-        5.4,
-        5.6
-      ],
-      "revenue": [
-        133668525,
-        57651794
-      ],
-      "budget": [
-        80000000,
-        33000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Dennis Dugan",
       "target": "Kevin James",
       "title": [
         "grown ups 2",
@@ -5016,56 +4556,6 @@
         80000000
       ],
       "counts": 2
-    },
-    {
-      "source": "Dennis Dugan",
-      "target": "Kevin Nealon",
-      "title": [
-        "you don't mess with the zohan",
-        "just go with it",
-        "happy gilmore"
-      ],
-      "imdb_rating": [
-        5.5,
-        6.4,
-        7
-      ],
-      "revenue": [
-        100018837,
-        103028109,
-        38624000
-      ],
-      "budget": [
-        90000000,
-        80000000,
-        12000000
-      ],
-      "counts": 3
-    },
-    {
-      "source": "Dennis Dugan",
-      "target": "Steve Buscemi",
-      "title": [
-        "grown ups 2",
-        "grown ups",
-        "big daddy"
-      ],
-      "imdb_rating": [
-        5.4,
-        6,
-        6.4
-      ],
-      "revenue": [
-        133668525,
-        162001186,
-        163479795
-      ],
-      "budget": [
-        80000000,
-        80000000,
-        34200000
-      ],
-      "counts": 3
     },
     {
       "source": "Dennis Dugan",
@@ -5240,27 +4730,6 @@
       "counts": 3
     },
     {
-      "source": "Eli Roth",
-      "target": "Jay Hernandez",
-      "title": [
-        "hostel: part ii",
-        "hostel"
-      ],
-      "imdb_rating": [
-        5.4,
-        5.9
-      ],
-      "revenue": [
-        17544812,
-        47277326
-      ],
-      "budget": [
-        10000000,
-        4800000
-      ],
-      "counts": 2
-    },
-    {
       "source": "Eric Darnell",
       "target": "Andy Richter",
       "title": [
@@ -5376,27 +4845,6 @@
         22000000
       ],
       "counts": 3
-    },
-    {
-      "source": "Ethan Coen",
-      "target": "Stephen Root",
-      "title": [
-        "no country for old men",
-        "the ladykillers"
-      ],
-      "imdb_rating": [
-        8.1,
-        6.2
-      ],
-      "revenue": [
-        74273505,
-        39692139
-      ],
-      "budget": [
-        25000000,
-        35000000
-      ],
-      "counts": 2
     },
     {
       "source": "Evan Goldberg",
@@ -5609,31 +5057,6 @@
     },
     {
       "source": "Francis Lawrence",
-      "target": "Philip Seymour Hoffman",
-      "title": [
-        "the hunger games: mockingjay - part 2",
-        "the hunger games: catching fire",
-        "the hunger games: mockingjay - part 1"
-      ],
-      "imdb_rating": [
-        6.6,
-        7.6,
-        6.7
-      ],
-      "revenue": [
-        281666058,
-        424645577,
-        337103873
-      ],
-      "budget": [
-        160000000,
-        130000000,
-        125000000
-      ],
-      "counts": 3
-    },
-    {
-      "source": "Francis Lawrence",
       "target": "Woody Harrelson",
       "title": [
         "the hunger games: mockingjay - part 2",
@@ -5682,30 +5105,26 @@
       "source": "Frank Darabont",
       "target": "Jeffrey DeMunn",
       "title": [
-        "the mist",
         "the majestic",
         "the green mile",
         "the shawshank redemption"
       ],
       "imdb_rating": [
-        7.2,
         6.9,
         8.5,
         9.3
       ],
       "revenue": [
-        25592632,
         27796042,
         136801374,
         28341469
       ],
       "budget": [
-        18000000,
         72000000,
         60000000,
         25000000
       ],
-      "counts": 4
+      "counts": 3
     },
     {
       "source": "Gabriele Muccino",
@@ -5809,27 +5228,6 @@
     },
     {
       "source": "Gavin O'Connor",
-      "target": "Frank Grillo",
-      "title": [
-        "warrior",
-        "pride and glory"
-      ],
-      "imdb_rating": [
-        8.2,
-        6.7
-      ],
-      "revenue": [
-        13651662,
-        15709385
-      ],
-      "budget": [
-        25000000,
-        30000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Gavin O'Connor",
       "target": "Noah Emmerich",
       "title": [
         "miracle",
@@ -5852,27 +5250,6 @@
     {
       "source": "Genndy Tartakovsky",
       "target": "Adam Sandler",
-      "title": [
-        "hotel transylvania 2",
-        "hotel transylvania"
-      ],
-      "imdb_rating": [
-        6.7,
-        7.1
-      ],
-      "revenue": [
-        169692572,
-        148313048
-      ],
-      "budget": [
-        80000000,
-        85000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Genndy Tartakovsky",
-      "target": "Steve Buscemi",
       "title": [
         "hotel transylvania 2",
         "hotel transylvania"
@@ -6048,27 +5425,6 @@
     },
     {
       "source": "George Miller",
-      "target": "Elizabeth Daily",
-      "title": [
-        "happy feet",
-        "babe: pig in the city"
-      ],
-      "imdb_rating": [
-        6.5,
-        5.8
-      ],
-      "revenue": [
-        197992827,
-        18318000
-      ],
-      "budget": [
-        100000000,
-        80000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "George Miller",
       "target": "Robin Williams",
       "title": [
         "happy feet",
@@ -6092,26 +5448,22 @@
       "source": "Gore Verbinski",
       "target": "Jack Davenport",
       "title": [
-        "pirates of the caribbean: at world's end",
         "pirates of the caribbean: dead man's chest",
         "pirates of the caribbean: the curse of the black pearl"
       ],
       "imdb_rating": [
-        7.1,
         7.3,
         8.1
       ],
       "revenue": [
-        309404152,
         423032628,
         305388685
       ],
       "budget": [
-        300000000,
         225000000,
         140000000
       ],
-      "counts": 3
+      "counts": 2
     },
     {
       "source": "Gore Verbinski",
@@ -6191,27 +5543,6 @@
         140000000
       ],
       "counts": 3
-    },
-    {
-      "source": "Guillermo del Toro",
-      "target": "Brian Steele",
-      "title": [
-        "hellboy ii: the golden army",
-        "hellboy"
-      ],
-      "imdb_rating": [
-        7,
-        6.8
-      ],
-      "revenue": [
-        75754670,
-        59035104
-      ],
-      "budget": [
-        85000000,
-        66000000
-      ],
-      "counts": 2
     },
     {
       "source": "Gurinder Chadha",
@@ -6294,27 +5625,6 @@
       "budget": [
         7200000,
         3000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Guy Ritchie",
-      "target": "Eddie Marsan",
-      "title": [
-        "sherlock holmes: a game of shadows",
-        "sherlock holmes"
-      ],
-      "imdb_rating": [
-        7.5,
-        7.6
-      ],
-      "revenue": [
-        186830669,
-        209019489
-      ],
-      "budget": [
-        125000000,
-        90000000
       ],
       "counts": 2
     },
@@ -6576,27 +5886,6 @@
     },
     {
       "source": "J.J. Abrams",
-      "target": "Bruce Greenwood",
-      "title": [
-        "star trek into darkness",
-        "star trek"
-      ],
-      "imdb_rating": [
-        7.8,
-        8
-      ],
-      "revenue": [
-        228756232,
-        257704099
-      ],
-      "budget": [
-        190000000,
-        150000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "J.J. Abrams",
       "target": "Chris Pine",
       "title": [
         "star trek into darkness",
@@ -6634,27 +5923,6 @@
       "budget": [
         190000000,
         150000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Jake Kasdan",
-      "target": "Nat Faxon",
-      "title": [
-        "sex tape",
-        "walk hard: the dewey cox story"
-      ],
-      "imdb_rating": [
-        5.1,
-        6.7
-      ],
-      "revenue": [
-        38543473,
-        18317151
-      ],
-      "budget": [
-        40000000,
-        35000000
       ],
       "counts": 2
     },
@@ -6785,27 +6053,6 @@
       "budget": [
         120000000,
         48000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "James Wan",
-      "target": "Barbara Hershey",
-      "title": [
-        "insidious",
-        "insidious: chapter 2"
-      ],
-      "imdb_rating": [
-        6.8,
-        6.6
-      ],
-      "revenue": [
-        53991137,
-        83574831
-      ],
-      "budget": [
-        1500000,
-        5000000
       ],
       "counts": 2
     },
@@ -6947,30 +6194,22 @@
       "source": "Jason Reitman",
       "target": "J.K. Simmons",
       "title": [
-        "up in the air",
-        "juno",
         "labor day",
         "thank you for smoking"
       ],
       "imdb_rating": [
-        7.4,
-        7.5,
         6.9,
         7.6
       ],
       "revenue": [
-        83813460,
-        143492840,
         13362308,
         24792061
       ],
       "budget": [
-        25000000,
-        7500000,
         18000000,
         6500000
       ],
-      "counts": 4
+      "counts": 2
     },
     {
       "source": "Jason Reitman",
@@ -7212,27 +6451,6 @@
       "budget": [
         47000000,
         27000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Jeff Nichols",
-      "target": "Sam Shepard",
-      "title": [
-        "midnight special",
-        "mud"
-      ],
-      "imdb_rating": [
-        6.7,
-        7.4
-      ],
-      "revenue": [
-        3707794,
-        21589307
-      ],
-      "budget": [
-        18000000,
-        10000000
       ],
       "counts": 2
     },
@@ -7559,30 +6777,26 @@
       "source": "John Lasseter",
       "target": "John Ratzenberger",
       "title": [
-        "cars",
         "toy story 2",
         "a bug's life",
         "toy story"
       ],
       "imdb_rating": [
-        7.2,
         7.9,
         7.2,
         8.3
       ],
       "revenue": [
-        244052771,
         245823397,
         162792677,
         191796233
       ],
       "budget": [
-        120000000,
         90000000,
         120000000,
         30000000
       ],
-      "counts": 4
+      "counts": 3
     },
     {
       "source": "John Lasseter",
@@ -7800,31 +7014,6 @@
     },
     {
       "source": "Jon Favreau",
-      "target": "Jon Favreau",
-      "title": [
-        "iron man",
-        "iron man 2",
-        "made"
-      ],
-      "imdb_rating": [
-        7.9,
-        7,
-        6.4
-      ],
-      "revenue": [
-        318298180,
-        312057433,
-        5308707
-      ],
-      "budget": [
-        140000000,
-        200000000,
-        5000000
-      ],
-      "counts": 3
-    },
-    {
-      "source": "Jon Favreau",
       "target": "Robert Downey Jr.",
       "title": [
         "iron man",
@@ -7840,27 +7029,6 @@
       ],
       "budget": [
         140000000,
-        200000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Jon Favreau",
-      "target": "Scarlett Johansson",
-      "title": [
-        "the jungle book",
-        "iron man 2"
-      ],
-      "imdb_rating": [
-        7.8,
-        7
-      ],
-      "revenue": [
-        362645141,
-        312057433
-      ],
-      "budget": [
-        175000000,
         200000000
       ],
       "counts": 2
@@ -7992,50 +7160,8 @@
       "counts": 2
     },
     {
-      "source": "Joon-ho Bong",
-      "target": "Kang-ho Song",
-      "title": [
-        "the host",
-        "snowpiercer"
-      ],
-      "imdb_rating": [
-        7,
-        7
-      ],
-      "revenue": [
-        2201412,
-        4563029
-      ],
-      "budget": [
-        12215500000,
-        39200000
-      ],
-      "counts": 2
-    },
-    {
       "source": "Joss Whedon",
       "target": "Chris Evans",
-      "title": [
-        "avengers: age of ultron",
-        "the avengers"
-      ],
-      "imdb_rating": [
-        7.5,
-        8.1
-      ],
-      "revenue": [
-        458991599,
-        623279547
-      ],
-      "budget": [
-        250000000,
-        220000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Joss Whedon",
-      "target": "Chris Hemsworth",
       "title": [
         "avengers: age of ultron",
         "the avengers"
@@ -8072,48 +7198,6 @@
       "budget": [
         250000000,
         220000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Joss Whedon",
-      "target": "Scarlett Johansson",
-      "title": [
-        "avengers: age of ultron",
-        "the avengers"
-      ],
-      "imdb_rating": [
-        7.5,
-        8.1
-      ],
-      "revenue": [
-        458991599,
-        623279547
-      ],
-      "budget": [
-        250000000,
-        220000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Judd Apatow",
-      "target": "Charlyne Yi",
-      "title": [
-        "this is 40",
-        "knocked up"
-      ],
-      "imdb_rating": [
-        6.2,
-        7
-      ],
-      "revenue": [
-        67523385,
-        148734225
-      ],
-      "budget": [
-        35000000,
-        30000000
       ],
       "counts": 2
     },
@@ -8223,27 +7307,6 @@
       "counts": 2
     },
     {
-      "source": "Kathryn Bigelow",
-      "target": "Christian Camargo",
-      "title": [
-        "the hurt locker",
-        "k-19: the widowmaker"
-      ],
-      "imdb_rating": [
-        7.6,
-        6.7
-      ],
-      "revenue": [
-        15700000,
-        35168677
-      ],
-      "budget": [
-        15000000,
-        100000000
-      ],
-      "counts": 2
-    },
-    {
       "source": "Keenen Ivory Wayans",
       "target": "Brittany Daniel",
       "title": [
@@ -8330,27 +7393,6 @@
         8000000
       ],
       "counts": 3
-    },
-    {
-      "source": "Kenneth Branagh",
-      "target": "Derek Jacobi",
-      "title": [
-        "cinderella",
-        "henry v"
-      ],
-      "imdb_rating": [
-        7,
-        7.7
-      ],
-      "revenue": [
-        201148159,
-        10161099
-      ],
-      "budget": [
-        95000000,
-        9000000
-      ],
-      "counts": 2
     },
     {
       "source": "Kevin Greutert",
@@ -8489,27 +7531,6 @@
         230000
       ],
       "counts": 4
-    },
-    {
-      "source": "Kevin Smith",
-      "target": "Jeff Anderson",
-      "title": [
-        "zack and miri make a porno",
-        "clerks"
-      ],
-      "imdb_rating": [
-        6.6,
-        7.8
-      ],
-      "revenue": [
-        31452765,
-        3151130
-      ],
-      "budget": [
-        24000000,
-        230000
-      ],
-      "counts": 2
     },
     {
       "source": "Kevin Smith",
@@ -8701,27 +7722,6 @@
       "budget": [
         32000000,
         21000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Louis Leterrier",
-      "target": "Morgan Freeman",
-      "title": [
-        "now you see me",
-        "unleashed"
-      ],
-      "imdb_rating": [
-        7.3,
-        7
-      ],
-      "revenue": [
-        117698894,
-        24520892
-      ],
-      "budget": [
-        75000000,
-        45000000
       ],
       "counts": 2
     },
@@ -9033,27 +8033,6 @@
     },
     {
       "source": "Martin Scorsese",
-      "target": "Ray Winstone",
-      "title": [
-        "hugo",
-        "the departed"
-      ],
-      "imdb_rating": [
-        7.5,
-        8.5
-      ],
-      "revenue": [
-        73820094,
-        132373442
-      ],
-      "budget": [
-        170000000,
-        90000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Martin Scorsese",
       "target": "Robert De Niro",
       "title": [
         "casino",
@@ -9129,53 +8108,7 @@
     },
     {
       "source": "Michael Bay",
-      "target": "Glenn Morshower",
-      "title": [
-        "transformers: revenge of the fallen",
-        "transformers: dark of the moon"
-      ],
-      "imdb_rating": [
-        6,
-        6.3
-      ],
-      "revenue": [
-        402076689,
-        352358779
-      ],
-      "budget": [
-        200000000,
-        195000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Michael Bay",
       "target": "Josh Duhamel",
-      "title": [
-        "transformers: revenge of the fallen",
-        "transformers: dark of the moon",
-        "transformers"
-      ],
-      "imdb_rating": [
-        6,
-        6.3,
-        7.1
-      ],
-      "revenue": [
-        402076689,
-        352358779,
-        318759914
-      ],
-      "budget": [
-        200000000,
-        195000000,
-        150000000
-      ],
-      "counts": 3
-    },
-    {
-      "source": "Michael Bay",
-      "target": "Kevin Dunn",
       "title": [
         "transformers: revenge of the fallen",
         "transformers: dark of the moon",
@@ -9791,27 +8724,6 @@
     },
     {
       "source": "Nicholas Stoller",
-      "target": "Ike Barinholtz",
-      "title": [
-        "neighbors 2: sorority rising",
-        "neighbors"
-      ],
-      "imdb_rating": [
-        6,
-        6.4
-      ],
-      "revenue": [
-        55291815,
-        150056505
-      ],
-      "budget": [
-        35000000,
-        18000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Nicholas Stoller",
       "target": "Rose Byrne",
       "title": [
         "neighbors 2: sorority rising",
@@ -10114,27 +9026,6 @@
     },
     {
       "source": "Paul Thomas Anderson",
-      "target": "Jim Meskimen",
-      "title": [
-        "there will be blood",
-        "magnolia"
-      ],
-      "imdb_rating": [
-        8.1,
-        8
-      ],
-      "revenue": [
-        40218903,
-        22450975
-      ],
-      "budget": [
-        25000000,
-        37000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Paul Thomas Anderson",
       "target": "Joaquin Phoenix",
       "title": [
         "the master",
@@ -10151,27 +9042,6 @@
       "budget": [
         32000000,
         20000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Paul W.S. Anderson",
-      "target": "Boris Kodjoe",
-      "title": [
-        "resident evil: retribution",
-        "resident evil: afterlife"
-      ],
-      "imdb_rating": [
-        5.4,
-        5.9
-      ],
-      "revenue": [
-        42345531,
-        60128566
-      ],
-      "budget": [
-        65000000,
-        60000000
       ],
       "counts": 2
     },
@@ -10332,48 +9202,6 @@
     },
     {
       "source": "Peter Jackson",
-      "target": "Adam Brown",
-      "title": [
-        "the hobbit: the battle of the five armies",
-        "the hobbit: the desolation of smaug"
-      ],
-      "imdb_rating": [
-        7.5,
-        7.9
-      ],
-      "revenue": [
-        255108370,
-        258355354
-      ],
-      "budget": [
-        250000000,
-        225000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Peter Jackson",
-      "target": "Aidan Turner",
-      "title": [
-        "the hobbit: the battle of the five armies",
-        "the hobbit: the desolation of smaug"
-      ],
-      "imdb_rating": [
-        7.5,
-        7.9
-      ],
-      "revenue": [
-        255108370,
-        258355354
-      ],
-      "budget": [
-        250000000,
-        225000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Peter Jackson",
       "target": "Billy Boyd",
       "title": [
         "the lord of the rings: the fellowship of the ring",
@@ -10421,27 +9249,6 @@
     {
       "source": "Peter Jackson",
       "target": "Ian McKellen",
-      "title": [
-        "the hobbit: the battle of the five armies",
-        "the hobbit: the desolation of smaug"
-      ],
-      "imdb_rating": [
-        7.5,
-        7.9
-      ],
-      "revenue": [
-        255108370,
-        258355354
-      ],
-      "budget": [
-        250000000,
-        225000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Peter Jackson",
-      "target": "James Nesbitt",
       "title": [
         "the hobbit: the battle of the five armies",
         "the hobbit: the desolation of smaug"
@@ -10613,27 +9420,6 @@
     },
     {
       "source": "Phillip Noyce",
-      "target": "Angelina Jolie Pitt",
-      "title": [
-        "salt",
-        "the bone collector"
-      ],
-      "imdb_rating": [
-        6.4,
-        6.7
-      ],
-      "revenue": [
-        118311368,
-        66488090
-      ],
-      "budget": [
-        110000000,
-        48000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Phillip Noyce",
       "target": "Harrison Ford",
       "title": [
         "clear and present danger",
@@ -10676,27 +9462,6 @@
     },
     {
       "source": "Pierre Coffin",
-      "target": "Miranda Cosgrove",
-      "title": [
-        "despicable me 2",
-        "despicable me"
-      ],
-      "imdb_rating": [
-        7.5,
-        7.7
-      ],
-      "revenue": [
-        368049635,
-        251501645
-      ],
-      "budget": [
-        76000000,
-        69000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Pierre Coffin",
       "target": "Steve Carell",
       "title": [
         "despicable me 2",
@@ -10713,27 +9478,6 @@
       "budget": [
         76000000,
         69000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Quentin Tarantino",
-      "target": "Christoph Waltz",
-      "title": [
-        "django unchained",
-        "inglourious basterds"
-      ],
-      "imdb_rating": [
-        8.5,
-        8.3
-      ],
-      "revenue": [
-        162804648,
-        120523073
-      ],
-      "budget": [
-        100000000,
-        75000000
       ],
       "counts": 2
     },
@@ -11082,27 +9826,6 @@
       "counts": 2
     },
     {
-      "source": "Rob Marshall",
-      "target": "Johnny Depp",
-      "title": [
-        "pirates of the caribbean: on stranger tides",
-        "into the woods"
-      ],
-      "imdb_rating": [
-        6.7,
-        6
-      ],
-      "revenue": [
-        241063875,
-        127997349
-      ],
-      "budget": [
-        250000000,
-        50000000
-      ],
-      "counts": 2
-    },
-    {
       "source": "Rob Minkoff",
       "target": "Nathan Lane",
       "title": [
@@ -11227,26 +9950,22 @@
       "source": "Robert Rodriguez",
       "target": "Quentin Tarantino",
       "title": [
-        "grindhouse",
         "from dusk till dawn",
         "desperado"
       ],
       "imdb_rating": [
-        7.6,
         7.3,
         7.2
       ],
       "revenue": [
-        25031037,
         25753840,
         25625110
       ],
       "budget": [
-        53000000,
         19000000,
         7000000
       ],
-      "counts": 3
+      "counts": 2
     },
     {
       "source": "Robert Rodriguez",
@@ -11525,48 +10244,6 @@
       "counts": 2
     },
     {
-      "source": "Roland Emmerich",
-      "target": "Matt Craven",
-      "title": [
-        "white house down",
-        "stonewall"
-      ],
-      "imdb_rating": [
-        6.4,
-        4.5
-      ],
-      "revenue": [
-        73103784,
-        186354
-      ],
-      "budget": [
-        150000000,
-        13500000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Roland Emmerich",
-      "target": "Sela Ward",
-      "title": [
-        "independence day: resurgence",
-        "the day after tomorrow"
-      ],
-      "imdb_rating": [
-        5.5,
-        6.4
-      ],
-      "revenue": [
-        102315545,
-        186739919
-      ],
-      "budget": [
-        165000000,
-        125000000
-      ],
-      "counts": 2
-    },
-    {
       "source": "Ron Howard",
       "target": "Adam Goldberg",
       "title": [
@@ -11709,27 +10386,6 @@
       "counts": 2
     },
     {
-      "source": "Sam Mendes",
-      "target": "Rory Kinnear",
-      "title": [
-        "spectre",
-        "skyfall"
-      ],
-      "imdb_rating": [
-        6.8,
-        7.8
-      ],
-      "revenue": [
-        200074175,
-        304360277
-      ],
-      "budget": [
-        245000000,
-        200000000
-      ],
-      "counts": 2
-    },
-    {
       "source": "Sam Raimi",
       "target": "Bridget Fonda",
       "title": [
@@ -11754,59 +10410,51 @@
       "source": "Sam Raimi",
       "target": "J.K. Simmons",
       "title": [
-        "spider-man 3",
         "spider-man 2",
         "spider-man",
         "for love of the game"
       ],
       "imdb_rating": [
-        6.2,
         7.3,
         7.3,
         6.5
       ],
       "revenue": [
-        336530303,
         373377893,
         403706375,
         35168395
       ],
       "budget": [
-        258000000,
         200000000,
         139000000,
         50000000
       ],
-      "counts": 4
+      "counts": 3
     },
     {
       "source": "Sam Raimi",
       "target": "James Franco",
       "title": [
-        "spider-man 3",
         "oz the great and powerful",
         "spider-man 2",
         "spider-man"
       ],
       "imdb_rating": [
-        6.2,
         6.4,
         7.3,
         7.3
       ],
       "revenue": [
-        336530303,
         234903076,
         373377893,
         403706375
       ],
       "budget": [
-        258000000,
         215000000,
         200000000,
         139000000
       ],
-      "counts": 4
+      "counts": 3
     },
     {
       "source": "Sam Raimi",
@@ -11878,27 +10526,6 @@
     {
       "source": "Seth MacFarlane",
       "target": "Amanda Seyfried",
-      "title": [
-        "ted 2",
-        "a million ways to die in the west"
-      ],
-      "imdb_rating": [
-        6.4,
-        6.1
-      ],
-      "revenue": [
-        81257500,
-        42615685
-      ],
-      "budget": [
-        68000000,
-        40000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Seth MacFarlane",
-      "target": "Liam Neeson",
       "title": [
         "ted 2",
         "a million ways to die in the west"
@@ -12009,26 +10636,22 @@
       "source": "Shawn Levy",
       "target": "Rami Malek",
       "title": [
-        "night at the museum: secret of the tomb",
         "night at the museum: battle of the smithsonian",
         "night at the museum"
       ],
       "imdb_rating": [
-        6.2,
         5.9,
         6.4
       ],
       "revenue": [
-        113733726,
         177243721,
         250863268
       ],
       "budget": [
-        127000000,
         150000000,
         110000000
       ],
-      "counts": 3
+      "counts": 2
     },
     {
       "source": "Shawn Levy",
@@ -12059,45 +10682,20 @@
       "source": "Shawn Levy",
       "target": "Steve Coogan",
       "title": [
-        "night at the museum: secret of the tomb",
         "night at the museum: battle of the smithsonian",
         "night at the museum"
       ],
       "imdb_rating": [
-        6.2,
         5.9,
         6.4
       ],
       "revenue": [
-        113733726,
         177243721,
         250863268
       ],
       "budget": [
-        127000000,
         150000000,
         110000000
-      ],
-      "counts": 3
-    },
-    {
-      "source": "Simon West",
-      "target": "Jason Statham",
-      "title": [
-        "the expendables 2",
-        "the mechanic"
-      ],
-      "imdb_rating": [
-        6.7,
-        6.6
-      ],
-      "revenue": [
-        85017401,
-        29113588
-      ],
-      "budget": [
-        92000000,
-        40000000
       ],
       "counts": 2
     },
@@ -12674,26 +11272,22 @@
       "source": "Tim Burton",
       "target": "Christopher Lee",
       "title": [
-        "dark shadows",
         "charlie and the chocolate factory",
         "corpse bride"
       ],
       "imdb_rating": [
-        6.2,
         6.7,
         7.4
       ],
       "revenue": [
-        79711678,
         206456431,
         53337608
       ],
       "budget": [
-        100000000,
         150000000,
         40000000
       ],
-      "counts": 3
+      "counts": 2
     },
     {
       "source": "Tim Burton",
@@ -13274,7 +11868,6 @@
       "target": "Bill Murray",
       "title": [
         "fantastic mr. fox",
-        "the grand budapest hotel",
         "moonrise kingdom",
         "the life aquatic with steve zissou",
         "the royal tenenbaums",
@@ -13282,7 +11875,6 @@
       ],
       "imdb_rating": [
         7.8,
-        8.1,
         7.8,
         7.3,
         7.6,
@@ -13290,7 +11882,6 @@
       ],
       "revenue": [
         20999103,
-        59073773,
         45507053,
         24006726,
         52353636,
@@ -13298,34 +11889,12 @@
       ],
       "budget": [
         40000000,
-        25000000,
         16000000,
         50000000,
         21000000,
         9000000
       ],
-      "counts": 6
-    },
-    {
-      "source": "Wes Ball",
-      "target": "Ki Hong Lee",
-      "title": [
-        "the maze runner",
-        "the scorch trials"
-      ],
-      "imdb_rating": [
-        6.8,
-        6.4
-      ],
-      "revenue": [
-        102413606,
-        81687587
-      ],
-      "budget": [
-        34000000,
-        61000000
-      ],
-      "counts": 2
+      "counts": 5
     },
     {
       "source": "Wes Craven",
@@ -13408,27 +11977,6 @@
       "budget": [
         42000000,
         19000000
-      ],
-      "counts": 2
-    },
-    {
-      "source": "Woody Allen",
-      "target": "Judy Davis",
-      "title": [
-        "to rome with love",
-        "deconstructing harry"
-      ],
-      "imdb_rating": [
-        6.3,
-        7.4
-      ],
-      "revenue": [
-        16684352,
-        10569071
-      ],
-      "budget": [
-        17000000,
-        20000000
       ],
       "counts": 2
     },
