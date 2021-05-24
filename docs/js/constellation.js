@@ -50,6 +50,7 @@ d3.json("result.json", (error, graph) => {
   const links = g.append("g").attr("class", "links").selectAll("line")
     .data(graph.links)
     .enter().append("line")
+    .attr("stroke", '#666666')
     .attr("stroke-width", function (d) { return d.counts; }); // thickness based on number of movies done
 
   // The nodes we see on the graph
@@ -92,12 +93,12 @@ d3.json("result.json", (error, graph) => {
     // Highlight all of the relevant links
     links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? '#69b3b2' : '#b8b8b8')
       // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
-      .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6)
+      .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6);
   })
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
-    links.style('stroke', '#999')
+    links.style('stroke', '#666666')
       // .style('stroke-width', 1) // Removed because it hinders with dynamic width
       .style('opacity', 0.6);
   });
@@ -113,12 +114,12 @@ d3.json("result.json", (error, graph) => {
     // Highlight all of the relevant links
     links.style('stroke', link => (link == selectedLink) ? '#69b3b2' : '#b8b8b8')
       // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
-      .style('opacity', link => (link == selectedLink) ? 1 : 0.6)
+      .style('opacity', link => (link == selectedLink) ? 1 : 0.6);
   })
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
-    links.style('stroke', '#999')
+    links.style('stroke', '#666666')
       // .style('stroke-width', 1) // Removed because it hinders with dynamic width
       .style('opacity', 0.6);
   });
