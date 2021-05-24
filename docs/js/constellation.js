@@ -97,7 +97,7 @@ d3.json("result.json", (error, graph) => {
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
-    links.style('stroke', 'black')
+    links.style('stroke', '#999')
       // .style('stroke-width', 1) // Removed because it hinders with dynamic width
       .style('opacity', 0.6);
   });
@@ -118,7 +118,7 @@ d3.json("result.json", (error, graph) => {
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
-    links.style('stroke', 'black')
+    links.style('stroke', '#999')
       // .style('stroke-width', 1) // Removed because it hinders with dynamic width
       .style('opacity', 0.6);
   });
