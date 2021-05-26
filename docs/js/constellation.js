@@ -14,9 +14,9 @@ const svg = d3.select("div#constellation_svg")
 // More info at https://github.com/d3/d3-force
 const simulation = d3.forceSimulation()
   .force("link", d3.forceLink().id(d => d.id))
-  .force("charge", d3.forceManyBody().strength(-10))     // more force for more clarity
+  .force("charge", d3.forceManyBody().strength(-15))     // more force for more clarity
   .force("center", d3.forceCenter(width / 2, height / 2))
-  .force("collide", d3.forceCollide().radius(5));
+  .force("collide", d3.forceCollide().radius(20));
 
 // Add encompassing group for the zoom
 //
@@ -46,23 +46,23 @@ d3.json("result.json", (error, graph) => {
   const idToNode = {};
   graph.nodes.forEach(node => idToNode[node.id] = node)
 
-  // The edges we see on the graph
-  const links = g.append("g").attr("class", "links").selectAll("line")
-    .data(graph.links)
-    .enter().append("line")
-    .attr("stroke", '#666666')
-    .attr("stroke-width", function (d) { return d.counts; }); // thickness based on number of movies done
-
   // The nodes we see on the graph
   const nodes = g.append("g").attr("class", "nodes").selectAll("g")
     .data(graph.nodes)
     .enter().append("circle")
-    .attr("r", function (d) {return 5/Math.sqrt(d.group);}) // radius based on group - director / actor
-    .attr("fill", function (d) { return color(d.group); })  // colour based on group - director / actor
+    .attr("r", function (d) {return 7.5/Math.sqrt(d.group); }) // radius based on group - director / actor
+    .attr("fill", function (d) { return color(d.group); })   // colour based on group - director / actor
     .call(d3.drag()
       .on("start", drag_start)
       .on("drag", dragged)
       .on("end", drag_end));
+
+  // The edges we see on the graph
+  const links = g.append("g").attr("class", "links").selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+    .attr("stroke", '#a0a0ba')
+    .attr("stroke-width", function (d) { return Math.sqrt(5*d.counts); }); // thickness based on number of movies done
 
   // The text above the nodes
   const text = g.append("g").attr("class", "labels").selectAll("g")
@@ -70,10 +70,11 @@ d3.json("result.json", (error, graph) => {
     .enter()
     .append("g")
     .append("text")
-    .attr("x", 7)
-    .attr("y", ".31em")
+    .attr("x", "1.2em")
+    .attr("y", ".35em")
     .style("font-family", "sans-serif")
-    .style("font-size", "0.5em")  // smaller font
+    .style("font-size", "0.55em")
+    // .style("fill", "white")
     .text(node => node.id);
 
   // TODO: Can we remove this? I don't see where it's used...
@@ -91,14 +92,14 @@ d3.json("result.json", (error, graph) => {
     nodes.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
-    links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? '#69b3b2' : '#b8b8b8')
+    links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? '#69b3b2' : '#536691')
       // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
       .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6);
   })
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
-    links.style('stroke', '#666666')
+    links.style('stroke', '#a0a0ba')
       // .style('stroke-width', 1) // Removed because it hinders with dynamic width
       .style('opacity', 0.6);
   });
@@ -112,14 +113,14 @@ d3.json("result.json", (error, graph) => {
     nodes.style('opacity', linkedNode => isLinkConnectedToNode(selectedLink, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
-    links.style('stroke', link => (link == selectedLink) ? '#69b3b2' : '#b8b8b8')
+    links.style('stroke', link => (link == selectedLink) ? '#69b3b2' : '#536691')
       // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
       .style('opacity', link => (link == selectedLink) ? 1 : 0.6);
   })
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
-    links.style('stroke', '#666666')
+    links.style('stroke', '#a0a0ba')
       // .style('stroke-width', 1) // Removed because it hinders with dynamic width
       .style('opacity', 0.6);
   });
