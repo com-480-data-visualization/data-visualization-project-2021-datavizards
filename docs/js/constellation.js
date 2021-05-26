@@ -46,6 +46,13 @@ d3.json("result.json", (error, graph) => {
   const idToNode = {};
   graph.nodes.forEach(node => idToNode[node.id] = node)
 
+  // The edges we see on the graph
+  const links = g.append("g").attr("class", "links").selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+    .attr("stroke", '#a0a0ba')
+    .attr("stroke-width", function (d) { return Math.sqrt(5*d.counts); }); // thickness based on number of movies done
+
   // The nodes we see on the graph
   const nodes = g.append("g").attr("class", "nodes").selectAll("g")
     .data(graph.nodes)
@@ -57,13 +64,6 @@ d3.json("result.json", (error, graph) => {
       .on("drag", dragged)
       .on("end", drag_end));
 
-  // The edges we see on the graph
-  const links = g.append("g").attr("class", "links").selectAll("line")
-    .data(graph.links)
-    .enter().append("line")
-    .attr("stroke", '#a0a0ba')
-    .attr("stroke-width", function (d) { return Math.sqrt(5*d.counts); }); // thickness based on number of movies done
-
   // The text above the nodes
   const text = g.append("g").attr("class", "labels").selectAll("g")
     .data(graph.nodes)
@@ -74,7 +74,7 @@ d3.json("result.json", (error, graph) => {
     .attr("y", ".35em")
     .style("font-family", "sans-serif")
     .style("font-size", "0.55em")
-    // .style("fill", "white")
+    .style("fill", "#c1c9c9")
     .text(node => node.id);
 
   // TODO: Can we remove this? I don't see where it's used...
@@ -92,15 +92,15 @@ d3.json("result.json", (error, graph) => {
     nodes.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
-    links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? '#69b3b2' : '#536691')
-      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
+    links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? '#45e6e3' : '#536691')
+      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? function(link) {return 4*link.counts;} : function(link) {return link.counts;})  // doesn't work
       .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6);
   })
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
     links.style('stroke', '#a0a0ba')
-      // .style('stroke-width', 1) // Removed because it hinders with dynamic width
+      // .style('stroke-width', function(link) {return link.counts;}) // doesn't work
       .style('opacity', 0.6);
   });
 
@@ -113,15 +113,15 @@ d3.json("result.json", (error, graph) => {
     nodes.style('opacity', linkedNode => isLinkConnectedToNode(selectedLink, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
-    links.style('stroke', link => (link == selectedLink) ? '#69b3b2' : '#536691')
-      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
+    links.style('stroke', link => (link == selectedLink) ? '#45e6e3' : '#536691')
+      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? function(link) {return 4*link.counts;} : function(link) {return link.counts;})  // doesn't work
       .style('opacity', link => (link == selectedLink) ? 1 : 0.6);
   })
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
     links.style('stroke', '#a0a0ba')
-      // .style('stroke-width', 1) // Removed because it hinders with dynamic width
+      // .style('stroke-width', function(link) {return link.counts;}) // doesn't work
       .style('opacity', 0.6);
   });
 
