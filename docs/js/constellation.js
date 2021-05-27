@@ -2,6 +2,10 @@
 const width  = window.innerWidth;
 const height = window.innerHeight;
 const color  = d3.scaleOrdinal(d3.schemeCategory10);
+// Link colors
+const default_color = '#a0a0ba';
+const highlight_color = '#45e6e3';
+const other_color = '#536691';     // similar to background-color
 
 // Construct the main SVG
 const svg = d3.select("div#constellation_svg")
@@ -24,7 +28,11 @@ const simulation = d3.forceSimulation()
 const g = svg.append("g")
   .attr("class", "everything");
 
-function render(graph, graph_color) {
+// Graph has two keys: "nodes" and "links"
+d3.json("result.json", (error, graph) => {
+if (error)
+  throw error;
+
   // Internal list used by isConnected().
   const linkedByIndex = {};
   graph.links.forEach(link => linkedByIndex[link.source + "," + link.target] = true);
@@ -37,17 +45,17 @@ function render(graph, graph_color) {
     return link.source === node || link.target === node
   }
 
-  // Create data = list of groups
-  const allGroups = ["yellow", "blue", "red", "green", "purple", "black"]
-
-  const filterButton = g.append("g").attr("class", "filters")
-    .append('select')
-    .selectAll('myOptions') // Next 4 lines add 6 options = 6 colors
-    .data(allGroups)
-    .enter()
-    .append('option')
-    .text(function (d) { return d; }) // text showed in the menu
-    .attr("value", function (d) { return d; }) // corresponding value returned by the button
+  // .... Not sure where this is used .... commented for now
+  // // Create data = list of groups
+  // const allGroups = ["yellow", "blue", "red", "green", "purple", "black"]
+  // const filterButton = g.append("g").attr("class", "filters")
+  //   .append('select')
+  //   .selectAll('myOptions') // Next 4 lines add 6 options = 6 colors
+  //   .data(allGroups)
+  //   .enter()
+  //   .append('option')
+  //   .text(function (d) { return d; }) // text showed in the menu
+  //   .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
   // Data structure that allows us to directly call idToNode['Ben Affleck']
   // to get a node instead of knowing its ID in the array.
@@ -58,15 +66,15 @@ function render(graph, graph_color) {
   const links = g.append("g").attr("class", "links").selectAll("line")
     .data(graph.links)
     .enter().append("line")
-    .attr("stroke", '#a0a0ba')
+    .attr("stroke", default_color)
     .attr("stroke-width", function (d) { return Math.sqrt(5*d.counts); }); // thickness based on number of movies done
 
   // The nodes we see on the graph
   const nodes = g.append("g").attr("class", "nodes").selectAll("g")
     .data(graph.nodes)
     .enter().append("circle")
-    .attr("r", function (d) {return 7.5/Math.sqrt(d.group); }) // radius based on group - director / actor
-    .attr("fill", function (d) { return color(d.group); })   // colour based on group - director / actor
+    .attr("r", function (d) {return 7.5/Math.sqrt(d.group);}) // radius based on group - director / actor
+    .attr("fill", function (d) { return color(d.group); })    // colour based on group - director / actor
     .call(d3.drag()
       .on("start", drag_start)
       .on("drag", dragged)
@@ -100,15 +108,16 @@ function render(graph, graph_color) {
     nodes.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
-    links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? '#45e6e3' : '#536691')
-      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? function(link) {return 4*link.counts;} : function(link) {return link.counts;})  // doesn't work
+    links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? highlight_color : other_color)
+      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
+      // function(link) {return 4*link.counts;} -> doesn't work
       .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6);
   })
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
-    links.style('stroke', '#a0a0ba')
-      // .style('stroke-width', function(link) {return link.counts;}) // doesn't work
+    links.style('stroke', default_color)
+      // .style('stroke-width', 1) // Removed because it hinders with dynamic width
       .style('opacity', 0.6);
   });
 
@@ -121,15 +130,15 @@ function render(graph, graph_color) {
     nodes.style('opacity', linkedNode => isLinkConnectedToNode(selectedLink, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
-    links.style('stroke', link => (link == selectedLink) ? '#45e6e3' : '#536691')
-      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? function(link) {return 4*link.counts;} : function(link) {return link.counts;})  // doesn't work
+    links.style('stroke', link => (link == selectedLink) ? highlight_color : other_color)
+      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
       .style('opacity', link => (link == selectedLink) ? 1 : 0.6);
   })
   .on('mouseout', () => {
     // Reset style for ALL nodes and ALL links
     nodes.style('opacity', 1);
-    links.style('stroke', '#a0a0ba')
-      // .style('stroke-width', function(link) {return link.counts;}) // doesn't work
+    links.style('stroke', default_color)
+      // .style('stroke-width', 1) // Removed because it hinders with dynamic width
       .style('opacity', 0.6);
   });
 
@@ -150,16 +159,6 @@ function render(graph, graph_color) {
 
     text.attr("transform", d => "translate(" + d.x + "," + d.y + ")");
   }
-}
-
-// Graph has two keys: "nodes" and "links"
-d3.json("result.json", (error, graph) => {
-  if (error)
-    throw error;
-
-  render(graph, "#FF0000");
-  render(graph, "#00FF00");
-  render(graph, "#0000FF");
 });
 
 // Add zoom capabilities
