@@ -24,11 +24,7 @@ const simulation = d3.forceSimulation()
 const g = svg.append("g")
   .attr("class", "everything");
 
-// Graph has two keys: "nodes" and "links"
-d3.json("result.json", (error, graph) => {
-  if (error)
-    throw error;
-
+function render(graph, graph_color) {
   // Internal list used by isConnected().
   const linkedByIndex = {};
   graph.links.forEach(link => linkedByIndex[link.source + "," + link.target] = true);
@@ -40,6 +36,18 @@ d3.json("result.json", (error, graph) => {
   function isLinkConnectedToNode(link, node) {
     return link.source === node || link.target === node
   }
+
+  // Create data = list of groups
+  const allGroups = ["yellow", "blue", "red", "green", "purple", "black"]
+
+  const filterButton = g.append("g").attr("class", "filters")
+    .append('select')
+    .selectAll('myOptions') // Next 4 lines add 6 options = 6 colors
+    .data(allGroups)
+    .enter()
+    .append('option')
+    .text(function (d) { return d; }) // text showed in the menu
+    .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
   // Data structure that allows us to directly call idToNode['Ben Affleck']
   // to get a node instead of knowing its ID in the array.
@@ -142,6 +150,16 @@ d3.json("result.json", (error, graph) => {
 
     text.attr("transform", d => "translate(" + d.x + "," + d.y + ")");
   }
+}
+
+// Graph has two keys: "nodes" and "links"
+d3.json("result.json", (error, graph) => {
+  if (error)
+    throw error;
+
+  render(graph, "#FF0000");
+  render(graph, "#00FF00");
+  render(graph, "#0000FF");
 });
 
 // Add zoom capabilities
