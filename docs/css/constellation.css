@@ -15,7 +15,7 @@ text {
 
 #constellation_svg {
   background-image: url("../img/black_sky.jpg");
-  /* background-color: '#0b0b0b'; */
+  background-color: "#0b0b0b";
   position: relative;
   width: 100%;
 }

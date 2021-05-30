@@ -23,9 +23,9 @@ const svg = d3.select("div#constellation_svg")
 // More info at https://github.com/d3/d3-force
 const simulation = d3.forceSimulation()
   .force("link", d3.forceLink().id(d => d.id))
-  .force("charge", d3.forceManyBody().strength(-20))     // more force for more clarity
+  .force("charge", d3.forceManyBody().strength(-10))     // more force for more clarity
   .force("center", d3.forceCenter(width / 2, height / 2))
-  .force("collide", d3.forceCollide().radius(5));
+  .force("collide", d3.forceCollide().radius(10));
 
 // Add encompassing group for the zoom
 //
