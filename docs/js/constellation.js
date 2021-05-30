@@ -73,6 +73,15 @@ if (error)
     .enter().append("line")
     .attr("stroke", default_color)
     .attr("stroke-width", function (d) { return Math.sqrt(6*d.counts); }); // thickness based on number of movies done
+    // .attr("d", function(d) {
+    //     var curve=2;
+    //     var homogeneous=3.2;
+    //     var dx = d.target.x - d.source.x,
+    //         dy = d.target.y - d.source.y,
+    //         dr = Math.sqrt(dx*dx+dy*dy)*(d.linknum+homogeneous)/(curve*homogeneous);  //linknum is defined above
+    //         return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+    //     });
+    // .on("click", expandLink);
 
   // The nodes we see on the graph
   const nodes = g.append("g").attr("class", "nodes").selectAll("g")
@@ -206,3 +215,14 @@ function drag_end(d) {
   d.fx = null;
   d.fy = null;
 }
+
+// function expandLink(d) {
+//   d3.event.stopPropagation();
+//   var i;
+//   for (i = 1; i < d.counts, i++) {
+//     links.append(this);
+//   }
+//   // need to remove this object from data
+//   // d3.select(this)
+//   //   .remove();
+// }
