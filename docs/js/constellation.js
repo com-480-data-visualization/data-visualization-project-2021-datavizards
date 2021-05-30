@@ -1,11 +1,16 @@
 // Constants
 const width  = window.innerWidth;
 const height = window.innerHeight;
-const color  = d3.scaleOrdinal(d3.schemeCategory10);
+// const color  = d3.scaleOrdinal(d3.schemeCategory10);
+// Node colors
+const director_color = '#7959ff';
+const actor_color = '#FFB326';
 // Link colors
-const default_color = '#a0a0ba';
-const highlight_color = '#45e6e3';
-const other_color = '#536691';     // similar to background-color
+const default_color = '#f1f1f1';
+const highlight_color = '#4dfffc';
+const other_color = '#767676';   // similar to background-color
+// Test color
+const text_color = '#dee7e7';
 
 // Construct the main SVG
 const svg = d3.select("div#constellation_svg")
@@ -18,9 +23,9 @@ const svg = d3.select("div#constellation_svg")
 // More info at https://github.com/d3/d3-force
 const simulation = d3.forceSimulation()
   .force("link", d3.forceLink().id(d => d.id))
-  .force("charge", d3.forceManyBody().strength(-15))     // more force for more clarity
+  .force("charge", d3.forceManyBody().strength(-20))     // more force for more clarity
   .force("center", d3.forceCenter(width / 2, height / 2))
-  .force("collide", d3.forceCollide().radius(20));
+  .force("collide", d3.forceCollide().radius(5));
 
 // Add encompassing group for the zoom
 //
@@ -67,14 +72,14 @@ if (error)
     .data(graph.links)
     .enter().append("line")
     .attr("stroke", default_color)
-    .attr("stroke-width", function (d) { return Math.sqrt(5*d.counts); }); // thickness based on number of movies done
+    .attr("stroke-width", function (d) { return Math.sqrt(6*d.counts); }); // thickness based on number of movies done
 
   // The nodes we see on the graph
   const nodes = g.append("g").attr("class", "nodes").selectAll("g")
     .data(graph.nodes)
     .enter().append("circle")
     .attr("r", function (d) {return 7.5/Math.sqrt(d.group);}) // radius based on group - director / actor
-    .attr("fill", function (d) { return color(d.group); })    // colour based on group - director / actor
+    .attr("fill", function(d) {return (d.group == '1') ? director_color : actor_color; })    // colour based on group - director / actor
     .call(d3.drag()
       .on("start", drag_start)
       .on("drag", dragged)
@@ -89,8 +94,8 @@ if (error)
     .attr("x", "1.2em")
     .attr("y", ".35em")
     .style("font-family", "sans-serif")
-    .style("font-size", "0.55em")
-    .style("fill", "#c1c9c9")
+    .style("font-size", "0.6em")
+    .style("fill", text_color)
     .text(node => node.id);
 
   // TODO: Can we remove this? I don't see where it's used...
@@ -172,8 +177,8 @@ if (error)
 // https://github.com/d3/d3-zoom#_zoom
 const zoom_handler = d3.zoom()
   // TODO: Doesn't work on D3 v4 anymore...
-  // .on("zoom", zoom_actions)
-  .on("wheel.zoom", null);
+  .on("zoom", zoom_actions)
+  // .on("wheel.zoom", null);
 
 zoom_handler(svg);
 
