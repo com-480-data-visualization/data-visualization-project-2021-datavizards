@@ -1,5 +1,5 @@
 // Constants
-const width  = window.innerWidth;
+const width = window.innerWidth;
 const height = window.innerHeight;
 // const color  = d3.scaleOrdinal(d3.schemeCategory10);
 // Node colors
@@ -35,8 +35,8 @@ const g = svg.append("g")
 
 // Graph has two keys: "nodes" and "links"
 d3.json("result.json", (error, graph) => {
-if (error)
-  throw error;
+  if (error)
+    throw error;
 
   // Internal list used by isConnected().
   const linkedByIndex = {};
@@ -72,23 +72,23 @@ if (error)
     .data(graph.links)
     .enter().append("line")
     .attr("stroke", default_color)
-    .attr("stroke-width", function (d) { return Math.sqrt(6*d.counts); }); // thickness based on number of movies done
-    // .attr("d", function(d) {
-    //     var curve=2;
-    //     var homogeneous=3.2;
-    //     var dx = d.target.x - d.source.x,
-    //         dy = d.target.y - d.source.y,
-    //         dr = Math.sqrt(dx*dx+dy*dy)*(d.linknum+homogeneous)/(curve*homogeneous);  //linknum is defined above
-    //         return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
-    //     });
-    // .on("click", expandLink);
+    .attr("stroke-width", function (d) { return Math.sqrt(6 * d.counts); }); // thickness based on number of movies done
+  // .attr("d", function(d) {
+  //     var curve=2;
+  //     var homogeneous=3.2;
+  //     var dx = d.target.x - d.source.x,
+  //         dy = d.target.y - d.source.y,
+  //         dr = Math.sqrt(dx*dx+dy*dy)*(d.linknum+homogeneous)/(curve*homogeneous);  //linknum is defined above
+  //         return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+  //     });
+  // .on("click", expandLink);
 
   // The nodes we see on the graph
   const nodes = g.append("g").attr("class", "nodes").selectAll("g")
     .data(graph.nodes)
     .enter().append("circle")
-    .attr("r", function (d) {return 7.5/Math.sqrt(d.group);}) // radius based on group - director / actor
-    .attr("fill", function(d) {return (d.group == '1') ? director_color : actor_color; })    // colour based on group - director / actor
+    .attr("r", function (d) { return 7.5 / Math.sqrt(d.group); }) // radius based on group - director / actor
+    .attr("fill", function (d) { return (d.group == '1') ? director_color : actor_color; })    // colour based on group - director / actor
     .call(d3.drag()
       .on("start", drag_start)
       .on("drag", dragged)
@@ -120,6 +120,7 @@ if (error)
     // TODO: Only highlights direct neighbors: we should highlight
     // all of the nodes reachable from the current node.
     nodes.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
+    text.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
     links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? highlight_color : other_color)
@@ -127,13 +128,14 @@ if (error)
       // function(link) {return 4*link.counts;} -> doesn't work
       .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6);
   })
-  .on('mouseout', () => {
-    // Reset style for ALL nodes and ALL links
-    nodes.style('opacity', 1);
-    links.style('stroke', default_color)
-      // .style('stroke-width', 1) // Removed because it hinders with dynamic width
-      .style('opacity', 0.6);
-  });
+    .on('mouseout', () => {
+      // Reset style for ALL nodes and ALL links
+      nodes.style('opacity', 1);
+      text.style('opacity', 1);
+      links.style('stroke', default_color)
+        // .style('stroke-width', 1) // Removed because it hinders with dynamic width
+        .style('opacity', 0.6);
+    });
 
   // --- links ---
   links.on('mouseover', selectedLink => {
@@ -142,19 +144,22 @@ if (error)
     // TODO: Only highlights direct neighbors: we should highlight
     // all of the nodes reachable from the current node.
     nodes.style('opacity', linkedNode => isLinkConnectedToNode(selectedLink, linkedNode) ? 1 : 0.1);
+    text.style('opacity', linkedNode => isLinkConnectedToNode(selectedLink, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
     links.style('stroke', link => (link == selectedLink) ? highlight_color : other_color)
       // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
       .style('opacity', link => (link == selectedLink) ? 1 : 0.6);
   })
-  .on('mouseout', () => {
-    // Reset style for ALL nodes and ALL links
-    nodes.style('opacity', 1);
-    links.style('stroke', default_color)
-      // .style('stroke-width', 1) // Removed because it hinders with dynamic width
-      .style('opacity', 0.6);
-  });
+    .on('mouseout', () => {
+      // Reset style for ALL nodes and ALL links
+      nodes.style('opacity', 1);
+      text.style('opacity', 1);
+      links.style('stroke', default_color)
+        // .style('stroke-width', 1) // Removed because it hinders with dynamic width
+        .style('opacity', 0.6);
+    })
+    .on("click", selectedLink => { open_side_window(selectedLink) });
 
   simulation.nodes(graph.nodes)
     .on("tick", ticked);
@@ -163,7 +168,7 @@ if (error)
     .links(graph.links);
 
   function ticked() {
-    nodes.attr("cx", d => d.x )
+    nodes.attr("cx", d => d.x)
       .attr("cy", d => d.y);
 
     links.attr("x1", d => d.source.x)
@@ -187,7 +192,7 @@ if (error)
 const zoom_handler = d3.zoom()
   // TODO: Doesn't work on D3 v4 anymore...
   .on("zoom", zoom_actions)
-  // .on("wheel.zoom", null);
+// .on("wheel.zoom", null);
 
 zoom_handler(svg);
 
@@ -226,3 +231,79 @@ function drag_end(d) {
 //   // d3.select(this)
 //   //   .remove();
 // }
+
+// Construct side-window chart svg
+const side_margin = { top: 10, right: 20, bottom: 30, left: 50 },
+  side_width = width / 3 - side_margin.left - side_margin.right,
+  side_height = height / 3 - side_margin.top - side_margin.bottom;
+
+const side_chart = d3.select("div#side_chart")
+  .append("svg")
+  .attr("width", side_width + side_margin.left + side_margin.right)
+  .attr("height", side_height + side_margin.top + side_margin.bottom)
+  .append("g")
+  .attr("transform", `translate(${side_margin.left},${side_margin.top})`);
+
+const side_x = side_chart.append("g")
+  .attr("transform", `translate(0,  ${side_height + 5})`);
+
+const side_y = side_chart.append("g")
+  .attr("transform", "translate(-5, 0)");
+
+const side_data = side_chart.append("g");
+
+/* Set the width of the sidebar to 250px (show it) */
+function open_side_window(data) {
+  document.getElementById("side_window").style.width = `${width / 3}px`;
+
+  var data_ = data.title.map(function (title, i) {
+    return [title, new Date(data.year[i], 0, 1), data.budget[i]];
+  });
+
+  // Add X axis
+  var x = d3.scaleLinear()
+    .domain(d3.extent(data_, function (d) {
+      return d[1];
+    }))
+    .range([0, side_width])
+  side_x.call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y")));
+
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain(d3.extent(data_, function (d) {
+      return d[2];
+    }))
+    .range([side_height, 0]);
+  side_y.call(d3.axisLeft(y).tickFormat(d3.format("($.2s")));
+
+  circles = side_data.selectAll("circle").data(data_);
+  circles.exit().remove();
+  circles.enter()
+    .append("circle")
+    .attr("r", 0);
+
+  labels = side_data.selectAll("text").data(data_);
+  labels.exit().remove();
+  labels.enter().append("text")
+
+  side_data.selectAll("text")
+    .attr('class', 'place-label')
+    .attr("x", function(d) {return x(d[1]) + 10})
+    .attr("y", function(d) {return y(d[2]) > side_height/2  ? y(d[2]) - 10 : y(d[2]) + 15 })
+    .text(function(d) {return d[0]})
+    .attr("font-size", "10px")
+    .style("text-anchor", function(d) { return x(d[1]) < side_width/2 ? "start" : "end"});
+
+  circles = side_data.selectAll("circle").data(data_);
+  circles.transition()
+    .duration(500)
+    .attr("cx", function (d) { return x(d[1]) })
+    .attr("cy", function (d) { return y(d[2]) })
+    .attr("r", 4);
+   
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function close_side_window() {
+  document.getElementById("side_window").style.width = "0";
+}
