@@ -255,18 +255,19 @@ const side_data = side_chart.append("g");
 /* Set the width of the sidebar to 250px (show it) */
 function open_side_window(data) {
   document.getElementById("side_window").style.width = `${width / 3}px`;
+  document.getElementById("side-title").textContent = `${data.source.id} x ${data.target.id}`;
 
   var data_ = data.title.map(function (title, i) {
-    return [title, new Date(data.year[i], 0, 1), data.budget[i]];
+    return [title, new Date(data.year[i], 0, 1), data.budget[i], data.revenue[i], data.imdb_rating[i]];
   });
 
   // Add X axis
-  var x = d3.scaleLinear()
+  var x = d3.scaleTime()
     .domain(d3.extent(data_, function (d) {
       return d[1];
     }))
-    .range([0, side_width])
-  side_x.call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y")));
+    .range([0, side_width]);
+  side_x.call(d3.axisBottom(x).tickFormat(x => x.getMonth()==0 ? d3.timeFormat("%Y")(x) : ""));
 
   // Add Y axis
   var y = d3.scaleLinear()
@@ -299,8 +300,7 @@ function open_side_window(data) {
     .duration(500)
     .attr("cx", function (d) { return x(d[1]) })
     .attr("cy", function (d) { return y(d[2]) })
-    .attr("r", 4);
-   
+    .attr("r", function (d) { return d[4] });
 }
 
 /* Set the width of the sidebar to 0 (hide it) */
