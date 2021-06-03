@@ -244,13 +244,51 @@ const side_chart = d3.select("div#side_chart")
   .append("g")
   .attr("transform", `translate(${side_margin.left},${side_margin.top})`);
 
-const side_x = side_chart.append("g")
-  .attr("transform", `translate(0,  ${side_height + 5})`);
+const side_x = side_chart.append("g");
+  // .attr("transform", `translate(0,  ${side_height + 5})`);
 
 const side_y = side_chart.append("g")
   .attr("transform", "translate(-5, 0)");
 
 const side_data = side_chart.append("g");
+
+// /* Set the width of the sidebar to 250px (show it) */
+// function open_side_window(data) {
+//   document.getElementById("side_window").style.width = `${width / 3}px`;
+//   document.getElementById("side-title").textContent = `${data.source.id} x ${data.target.id}`;
+
+//   var data_ = data.title.map(function (title, i) {
+//     return [title, new Date(data.year[i], 0, 1), data.budget[i], data.revenue[i], data.imdb_rating[i]];
+//   });
+
+//   // Add X axis
+//   var x = d3.scaleLinear()
+//     .domain(d3.extent(data_, function (d) { return d[2]; }))
+//     .range([0, side_width]);
+//   side_x.attr("transform", "translate(0," + side_height + ")")
+//     .call(d3.axisBottom(x).tickFormat(d3.format("($.2s")))
+//     .selectAll("text")
+//     .attr("transform", "translate(-10,0)rotate(-45)")
+//     .style("text-anchor", "end");
+
+//   // Y axis
+//   var y = d3.scaleBand()
+//     .domain(data_.map(function(d) { return d[0]; }))
+//     .range([ 0, side_height ])
+//     .padding(.1);
+//   side_y.call(d3.axisLeft(y))
+
+//   //Bars
+//   side_data.selectAll("myRect")
+//     .data(data_)
+//     .enter()
+//     .append("rect")
+//     .attr("x", x(0) )
+//     .attr("y", function(d) { return y(d[0]); })
+//     .attr("width", function(d) { return x(d[2]); })
+//     .attr("height", y.bandwidth() )
+//     .attr("fill", "#69b3a2")
+// }
 
 /* Set the width of the sidebar to 250px (show it) */
 function open_side_window(data) {
@@ -262,46 +300,96 @@ function open_side_window(data) {
   });
 
   // Add X axis
-  var x = d3.scaleTime()
-    .domain(d3.extent(data_, function (d) {
-      return d[1];
-    }))
-    .range([0, side_width]);
-  side_x.call(d3.axisBottom(x).tickFormat(x => x.getMonth()==0 ? d3.timeFormat("%Y")(x) : ""));
+  var x = d3.scaleBand()
+    .domain(data_.map(function(d) { return d[0]; }))
+    .range([0, side_width])
+    .padding(.1);
+  side_x.attr("transform", "translate(0," + side_height + ")")
+    .call(d3.axisBottom(x))
+    .selectAll("text")
+    .attr("transform", "translate(-10,0)rotate(-45)")
+    .style("text-anchor", "end");
 
-  // Add Y axis
+  // Y axis
   var y = d3.scaleLinear()
-    .domain(d3.extent(data_, function (d) {
-      return d[2];
-    }))
+    .domain([0, d3.max(data_, function(d) { return d[2]; })])
     .range([side_height, 0]);
   side_y.call(d3.axisLeft(y).tickFormat(d3.format("($.2s")));
 
-  circles = side_data.selectAll("circle").data(data_);
-  circles.exit().remove();
-  circles.enter()
-    .append("circle")
-    .attr("r", 0);
+  //Bars
+  bars = side_data.selectAll("rect").data(data_);
+  bars.exit().remove();
+  bars.enter()
+    .append("rect")
+      .attr("fill", "#69b3a2")
 
-  labels = side_data.selectAll("text").data(data_);
-  labels.exit().remove();
-  labels.enter().append("text")
-
-  side_data.selectAll("text")
-    .attr('class', 'place-label')
-    .attr("x", function(d) {return x(d[1]) + 10})
-    .attr("y", function(d) {return y(d[2]) > side_height/2  ? y(d[2]) - 10 : y(d[2]) + 15 })
-    .text(function(d) {return d[0]})
-    .attr("font-size", "10px")
-    .style("text-anchor", function(d) { return x(d[1]) < side_width/2 ? "start" : "end"});
-
-  circles = side_data.selectAll("circle").data(data_);
-  circles.transition()
-    .duration(500)
-    .attr("cx", function (d) { return x(d[1]) })
-    .attr("cy", function (d) { return y(d[2]) })
-    .attr("r", function (d) { return d[4] });
+  side_data.selectAll("rect").data(data_)
+    .transition().duration(500)
+    .attr("x", function(d) { return x(d[0]); })
+    .attr("y", function(d) { return y(d[2]); })
+    .attr("width", x.bandwidth())
+    .attr("height",  function(d) { return side_height - y(d[2]); })
+  
+  var max_height = 0;
+  side_x.selectAll('.tick').each(function() {
+    console.log(this)
+    if (this.getBBox().height > max_height) 
+      max_height = this.getBBox().height;
+  })
+  console.log(max_height)
+  d3.select("div#side_chart").select('svg')
+    .attr("height", side_height + side_margin.top + side_margin.bottom + max_height)
 }
+
+// function open_side_window(data) {
+//   document.getElementById("side_window").style.width = `${width / 3}px`;
+//   document.getElementById("side-title").textContent = `${data.source.id} x ${data.target.id}`;
+
+//   var data_ = data.title.map(function (title, i) {
+//     return [title, new Date(data.year[i], 0, 1), data.budget[i], data.revenue[i], data.imdb_rating[i]];
+//   });
+
+//   // Add X axis
+//   var x = d3.scaleTime()
+//     .domain(d3.extent(data_, function (d) {
+//       return d[1];
+//     }))
+//     .range([0, side_width]);
+//   side_x.call(d3.axisBottom(x).tickFormat(x => x.getMonth()==0 ? d3.timeFormat("%Y")(x) : ""));
+
+//   // Add Y axis
+//   var y = d3.scaleLinear()
+//     .domain(d3.extent(data_, function (d) {
+//       return d[2];
+//     }))
+//     .range([side_height, 0]);
+//   side_y.call(d3.axisLeft(y).tickFormat(d3.format("($.2s")));
+
+//   circles = side_data.selectAll("circle").data(data_);
+//   circles.exit().remove();
+//   circles.enter()
+//     .append("circle")
+//     .attr("r", 0);
+
+//   labels = side_data.selectAll("text").data(data_);
+//   labels.exit().remove();
+//   labels.enter().append("text")
+
+//   side_data.selectAll("text")
+//     .attr('class', 'place-label')
+//     .attr("x", function(d) {return x(d[1]) + 10})
+//     .attr("y", function(d) {return y(d[2]) > side_height/2  ? y(d[2]) - 10 : y(d[2]) + 15 })
+//     .text(function(d) {return d[0]})
+//     .attr("font-size", "10px")
+//     .style("text-anchor", function(d) { return x(d[1]) < side_width/2 ? "start" : "end"});
+
+//   circles = side_data.selectAll("circle").data(data_);
+//   circles.transition()
+//     .duration(500)
+//     .attr("cx", function (d) { return x(d[1]) })
+//     .attr("cy", function (d) { return y(d[2]) })
+//     .attr("r", function (d) { return d[4] });
+// }
 
 /* Set the width of the sidebar to 0 (hide it) */
 function close_side_window() {
