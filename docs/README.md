@@ -10,7 +10,7 @@ You can then go to http://localhost:8888/index.dev.html to open the graph.
 ## Where is the code?
 
 * JS: `docs/js/constellation.js`
-* CSS: `docs/css/` (`constellation.css`/`main.scss`/...)
+* CSS: `docs/_sass/constellation.scss`
 * HTML: `docs/index.dev.html` (do not change anything in there -> Changes here won't be reflected in the main website)
 
 ## Develop on the site
@@ -32,5 +32,5 @@ bundle exec jekyll serve
 ## Where is the code?
 
 * JS: `docs/js/constellation.js`
-* CSS: `docs/css/` (`constellation.css`/`main.scss`/...)
+* CSS: `docs/_sass/constellation.scss`
 * HTML: `docs/_includes_/*.html`

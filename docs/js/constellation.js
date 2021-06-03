@@ -1,14 +1,24 @@
 // Constants
-const width = window.innerWidth;
-const height = window.innerHeight;
-// const color  = d3.scaleOrdinal(d3.schemeCategory10);
+
+// We have set a 2px border around the SVG delimit where the animation starts and ends (see constellation.css).
+// 
+// This is basically to be pixel-perfect with the SVG size and the website :).
+const containerBorderWidth = 4;
+
+// Set the width/height of the constellation.
+const containerDimensions = d3.select("div#constellation_svg").node().getBoundingClientRect()
+const width               = containerDimensions.width - containerBorderWidth;
+const height              = containerDimensions.height - containerBorderWidth;
+
 // Node colors
 const director_color = '#7959ff';
-const actor_color = '#FFB326';
+const actor_color    = '#FFB326';
+
 // Link colors
-const default_color = '#f1f1f1';
+const default_color   = '#f1f1f1';
 const highlight_color = '#4dfffc';
-const other_color = '#767676';   // similar to background-color
+const other_color     = '#767676';   // similar to background-color
+
 // Test color
 const text_color = '#dee7e7';
 
