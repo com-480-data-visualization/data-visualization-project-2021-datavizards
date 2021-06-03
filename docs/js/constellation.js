@@ -58,11 +58,6 @@ d3.json("result.json", (error, graph) => {
     return link.source === node || link.target === node
   }
 
-  // Data structure that allows us to directly call idToNode['Ben Affleck']
-  // to get a node instead of knowing its ID in the array.
-  const idToNode = {};
-  graph.nodes.forEach(node => idToNode[node.id] = node)
-
   // The edges we see on the graph
   const links = g.append("g").attr("class", "links").selectAll("line")
     .data(graph.links)
