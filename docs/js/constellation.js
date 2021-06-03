@@ -284,6 +284,11 @@ function open_side_window(data) {
     .range([side_height, 0]);
   side_y.call(d3.axisLeft(y).tickFormat(d3.format("($.2s")));
 
+   // Add Y axis
+  var rating = d3.scaleLinear()
+    .domain([0, 10])
+    .range([side_height, 0]);
+
   var xSubgroup = d3.scaleBand()
     .domain(subgroups)
     .range([0, x.bandwidth()])
@@ -291,7 +296,7 @@ function open_side_window(data) {
 
   var color = d3.scaleOrdinal()
     .domain(subgroups)
-    .range(['#e41a1c','#377eb8'])
+    .range(['lightpink','lightskyblue'])
 
   side_data.selectAll(".bar-group").data(data_).exit().remove();
   side_data.selectAll(".bar-group").selectAll("rect")
@@ -314,7 +319,53 @@ function open_side_window(data) {
         .attr("y", function(d) { return y(d.value); })
         .attr("width", xSubgroup.bandwidth())
         .attr("height", function(d) { return side_height - y(d.value); })
-        .attr("fill", function(d) { return color(d.key); });
+        .attr("fill", function(d) { return color(d.key); })
+        .attr("opacity", '0.8');
+
+
+  labels = side_data.selectAll("text").data(data_);
+  labels.exit().remove();
+  labels.enter().append("text")
+      
+  side_data.selectAll("text")
+    .attr('class', 'place-label')
+    .attr("x", function(d) {return x(d[0]) + (x.bandwidth() / 2) + 10})
+    .attr("y", function(d) {return rating(d[4]) > side_height/2  ? rating(d[4]) - 10 : rating(d[4]) + 15 })
+    .text(function(d) {return d[4]})
+    .attr("fill", "darkgoldenrod")
+    .attr("font", "bold")
+    .attr("font-size", "12px")
+    .style("text-anchor", function(d) { return x(d[1]) < side_width/2 ? "start" : "end"});
+
+  circles = side_data.selectAll("circle").data(data_);
+  circles.exit().remove();
+  circles.enter()
+    .append("circle")
+    .attr("r", 0);
+
+  circles = side_data.selectAll("circle").data(data_);
+  circles.transition()
+    .duration(500)
+    .attr("fill", "darkgoldenrod")
+    .attr("cx", function (d) { return x(d[0]) + (x.bandwidth() / 2) })
+    .attr("cy", function (d) { return rating(d[4]) })
+    .attr("r", 4);
+
+    side_data.selectAll("path").data([data_], function(d) { return d[4] }).exit().remove();
+  line = side_data.selectAll("path").data([data_], function(d) { return d[4] });
+  line
+    .enter()
+    .append("path")
+    .merge(line)
+    .transition()
+    .duration(500)
+    .attr("fill", "none")
+    .attr("stroke", "darkgoldenrod")
+    .attr("stroke-width", 2)
+    .attr("d", d3.line()
+      .x(function(d) { return x(d[0]) + (x.bandwidth() / 2) })
+      .y(function(d) { return rating(d[4]) })
+      )
 
   var max_height = 0;
   side_x.selectAll('.tick').each(function() {
