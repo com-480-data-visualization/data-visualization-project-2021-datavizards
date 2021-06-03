@@ -1,5 +1,5 @@
 // Constants
-const width  = window.innerWidth;
+const width  = window.innerWidth * .89;
 const height = window.innerHeight;
 // const color  = d3.scaleOrdinal(d3.schemeCategory10);
 // Node colors

@@ -40,5 +40,6 @@ $theme-dark: #847DB3;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "mixins",
-        "base"
+        "base",
+        "constellation"
 ;
