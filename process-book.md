@@ -5,6 +5,7 @@
 ## Brainstorm
 
 * Start with the end result, and "how did we arrive here"?
+* Add an image for the process book intro (even a stock image with our website under it, to make a nice first impression)
 * Picking the topic (how we decided to do this one, our fears about having not enough data, ...)
 * Picking the right dataset(s) for the job
 * How did we decide on the visualizations we did? (three separate brainstorms, and we put everything in common after a week. What you see now is a merge of the three things)
