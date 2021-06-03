@@ -37,9 +37,7 @@ const simulation = d3.forceSimulation()
   .force("center", d3.forceCenter(width / 2, height / 2))
   .force("collide", d3.forceCollide().radius(10));
 
-// Add encompassing group for the zoom
-//
-// TODO: Describe what this does exactly, and why we need it here.
+// Add encompassing group (useful for the zoom)
 const g = svg.append("g")
   .attr("class", "everything");
 
