@@ -60,18 +60,6 @@ d3.json("result.json", (error, graph) => {
     return link.source === node || link.target === node
   }
 
-  // .... Not sure where this is used .... commented for now
-  // // Create data = list of groups
-  // const allGroups = ["yellow", "blue", "red", "green", "purple", "black"]
-  // const filterButton = g.append("g").attr("class", "filters")
-  //   .append('select')
-  //   .selectAll('myOptions') // Next 4 lines add 6 options = 6 colors
-  //   .data(allGroups)
-  //   .enter()
-  //   .append('option')
-  //   .text(function (d) { return d; }) // text showed in the menu
-  //   .attr("value", function (d) { return d; }) // corresponding value returned by the button
-
   // Data structure that allows us to directly call idToNode['Ben Affleck']
   // to get a node instead of knowing its ID in the array.
   const idToNode = {};
@@ -83,15 +71,6 @@ d3.json("result.json", (error, graph) => {
     .enter().append("line")
     .attr("stroke", default_color)
     .attr("stroke-width", function (d) { return Math.sqrt(6 * d.counts); }); // thickness based on number of movies done
-  // .attr("d", function(d) {
-  //     var curve=2;
-  //     var homogeneous=3.2;
-  //     var dx = d.target.x - d.source.x,
-  //         dy = d.target.y - d.source.y,
-  //         dr = Math.sqrt(dx*dx+dy*dy)*(d.linknum+homogeneous)/(curve*homogeneous);  //linknum is defined above
-  //         return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
-  //     });
-  // .on("click", expandLink);
 
   // The nodes we see on the graph
   const nodes = g.append("g").attr("class", "nodes").selectAll("g")
@@ -117,25 +96,20 @@ d3.json("result.json", (error, graph) => {
     .style("fill", text_color)
     .text(node => node.id);
 
-  // TODO: Can we remove this? I don't see where it's used...
-  // Reply to above TODO: It is used to display the name of the node (director / actor) on hover
+  // Used to display the name of the node (director / actor) on hover
   nodes.append("title").text(node => node.id);
+
   // Do the same for links, but display movies count
   links.append("title").text(link => link.counts);
 
   // --- nodes ---
   nodes.on('mouseover', selectedNode => {
     // Highlight the selected node and all of the neighboring nodes
-    //
-    // TODO: Only highlights direct neighbors: we should highlight
-    // all of the nodes reachable from the current node.
     nodes.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
     text.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
     links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? highlight_color : other_color)
-      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
-      // function(link) {return 4*link.counts;} -> doesn't work
       .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6);
   })
     .on('mouseout', () => {
@@ -143,16 +117,12 @@ d3.json("result.json", (error, graph) => {
       nodes.style('opacity', 1);
       text.style('opacity', 1);
       links.style('stroke', default_color)
-        // .style('stroke-width', 1) // Removed because it hinders with dynamic width
         .style('opacity', 0.6);
     });
 
   // --- links ---
   links.on('mouseover', selectedLink => {
     // Highlight the selected node and all of the neighboring nodes
-    //
-    // TODO: Only highlights direct neighbors: we should highlight
-    // all of the nodes reachable from the current node.
     nodes.style('opacity', linkedNode => isLinkConnectedToNode(selectedLink, linkedNode) ? 1 : 0.1);
     text.style('opacity', linkedNode => isLinkConnectedToNode(selectedLink, linkedNode) ? 1 : 0.1);
 
@@ -166,7 +136,6 @@ d3.json("result.json", (error, graph) => {
       nodes.style('opacity', 1);
       text.style('opacity', 1);
       links.style('stroke', default_color)
-        // .style('stroke-width', 1) // Removed because it hinders with dynamic width
         .style('opacity', 0.6);
     })
     .on("click", selectedLink => { open_side_window(selectedLink) });
@@ -191,18 +160,8 @@ d3.json("result.json", (error, graph) => {
 });
 
 // Add zoom capabilities
-//
-// To disable just wheel-driven zooming (say to not interfere with native scrolling),
-// you can remove the zoom behavior’s wheel event listener after
-// applying the zoom behavior to the selection.
-//
-// Alternatively, use zoom.filter for greater control over which events can initiate zoom gestures.
-//
-// https://github.com/d3/d3-zoom#_zoom
 const zoom_handler = d3.zoom()
-  // TODO: Doesn't work on D3 v4 anymore...
   .on("zoom", zoom_actions)
-// .on("wheel.zoom", null);
 
 zoom_handler(svg);
 
@@ -255,8 +214,6 @@ const side_chart = d3.select("div#side_chart")
   .attr("transform", `translate(${side_margin.left},${side_margin.top})`);
 
 const side_x = side_chart.append("g");
-  // .attr("transform", `translate(0,  ${side_height + 5})`);
-
 const side_y = side_chart.append("g")
   .attr("transform", "translate(-5, 0)");
 
