@@ -11,7 +11,7 @@
 * How did we decide on the visualizations we did? (three separate brainstorms, and we put everything in common after a week. What you see now is a merge of the three things)
 * Prototyping phase (include Kush's drawings, initial website)
 * Getting ready: splitting the work (separate D3 components that we would merge together afterwards - talk about index.dev, new website))
-* Talk about each D3 component on the website, who made them, what challenges did we have for those, ... (if possible, use pictures/GIFs to explain those! -> Animations are always better than pictures)
+* Talk about each D3 component on the website, who made them, what challenges did we have for those, and we solved them in the end... (if possible, use pictures/GIFs to explain those! -> Animations are always better than pictures)
 * Have a section about main achievements/challenges to recap what we said (basically the conclusion)
 
 ## Who did what?
