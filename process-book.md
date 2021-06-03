@@ -1,6 +1,6 @@
 # Process book
 
-[Markdown version](https://github.com/com-480-data-visualization/data-visualization-project-2021-datavizards/blob/master/process-book.md) | [PDF version](https://github.com/com-480-data-visualization/data-visualization-project-2021-datavizards/blob/master/process-book.pdf)
+[Markdown version (recommended)](https://github.com/com-480-data-visualization/data-visualization-project-2021-datavizards/blob/master/process-book.md) | [PDF version](https://github.com/com-480-data-visualization/data-visualization-project-2021-datavizards/blob/master/process-book.pdf)
 
 ## Brainstorm
 
