@@ -134,7 +134,7 @@ function open_side_window(data) {
   document.getElementById("side_window").style.height = `${side_height + side_margin.top + side_margin.bottom + max_height + 40}px`;
 
   var legspacing = 70;
-  var labels = ['budget', 'revenue']
+  var legendLabels = ['budget', 'revenue']
 
   var legend = side_chart.selectAll(".legend")
       .data(subgroups)
@@ -164,7 +164,7 @@ function open_side_window(data) {
       .attr("y", -18)
       .attr("text-anchor", "start")
       .text(function (d, i) {
-          return labels[i];
+          return legendLabels[i];
       });
 
   legend.append("text")
