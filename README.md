@@ -10,7 +10,7 @@
 
 ## Getting Started
 
-The website is located [here...](https://com-480-data-visualization.github.io/data-visualization-project-2021-datavizards)
+The website is located [here](https://com-480-data-visualization.github.io/data-visualization-project-2021-datavizards).
 
 ## Milestone 1 (23rd April, 5pm)
 
