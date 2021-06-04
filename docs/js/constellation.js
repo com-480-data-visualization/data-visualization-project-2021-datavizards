@@ -256,6 +256,10 @@ const side_y = side_chart.append("g")
 
 const side_data = side_chart.append("g");
 
+var tooltip = d3.select("body").append("div")	
+  .attr("class", "tooltip")				
+  .style("opacity", 0);
+
 /* Set the width of the sidebar to 250px (show it) */
 function open_side_window(data) {
   document.getElementById("side_window").style.width = `${width / 3}px`;
@@ -312,6 +316,19 @@ function open_side_window(data) {
       .selectAll("rect")
         .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
         .enter().append("rect")
+        .on("mouseover", function(d) {		
+          tooltip.transition()		
+              .duration(200)		
+              .style("opacity", .9);		
+              tooltip	.html(d3.format("($.2s")(d.value))	
+              .style("left", (d3.event.pageX) + "px")		
+              .style("top", (d3.event.pageY - 28) + "px");	
+          })					
+      .on("mouseout", function(d) {		
+        tooltip.transition()		
+              .duration(500)		
+              .style("opacity", 0);	
+      });
 
   side_data.selectAll(".bar-group")
     .transition().duration(500)
@@ -353,7 +370,7 @@ function open_side_window(data) {
     .attr("cy", function (d) { return rating(d[4]) })
     .attr("r", 4);
 
-    side_data.selectAll("path").data([data_], function(d) { return d[4] }).exit().remove();
+  side_data.selectAll("path").data([data_], function(d) { return d[4] }).exit().remove();
   line = side_data.selectAll("path").data([data_], function(d) { return d[4] });
   line
     .enter()
@@ -396,6 +413,12 @@ function open_side_window(data) {
       })
       .attr("y", -30);
 
+  legend.append("circle")
+      .attr("fill", "darkgoldenrod")
+      .attr("r", 4)
+      .attr("cx", 2 * legspacing - 20)
+      .attr("cy", -22);
+
   legend.append("text")
       .attr("class", "label")
       .attr("x", function (d, i) {
@@ -406,6 +429,19 @@ function open_side_window(data) {
       .text(function (d, i) {
           return labels[i];
       });
+
+  legend.append("text")
+      .attr("class", "label")
+      .attr("x", 2 * legspacing - 10)
+      .attr("y", -18)
+      .attr("text-anchor", "start")
+      .text('IMDb Rating');
+
+  side_data.selectAll(".bar-group, .place-label, circle, path").sort(function(d1, d2) {
+    if (d1.type === d2.type)
+        return 0;
+    return d1.type === ".bar-group" ? -1 : 1;
+  });
 }
 
 /* Set the width of the sidebar to 0 (hide it) */
