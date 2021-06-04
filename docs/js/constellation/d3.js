@@ -138,7 +138,7 @@ d3.json("result.json", (error, graph) => {
       links.style('stroke', default_color)
         .style('opacity', 0.6);
     })
-    .on("click", selectedLink => { open_side_window(selectedLink) });
+    .on("click", selectedLink => open_side_window(selectedLink));
 
   simulation.nodes(graph.nodes)
     .on("tick", () => {
