@@ -10,7 +10,7 @@
 
 ## Getting Started
 
-The website is located [here](https://com-480-data-visualization.github.io/data-visualization-project-2021-datavizards).
+The website is located [here...]https://com-480-data-visualization.github.io/data-visualization-project-2021-datavizards).
 
 ## Milestone 1 (23rd April, 5pm)
 
@@ -136,6 +136,11 @@ An animation depicting the graph network on the current skeleton version of the 
 ## Milestone 3 (4th June, 5pm)
 
 **80% of the final grade**
+
+We present our final project for the director-actor constellation. Please click the following links to view the submissions:
+- The [visualization website](https://com-480-data-visualization.github.io/data-visualization-project-2021-datavizards)
+- The [process book](process-book.pdf)
+- The screencast video
 
 ## Late policy
 
