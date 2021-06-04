@@ -237,8 +237,8 @@ function drag_end(d) {
 
 // Construct side-window chart svg
 const side_margin = { top: 51, right: 20, bottom: 30, left: 50 },
-  side_width = width / 3 - side_margin.left - side_margin.right,
-  side_height = height / 3 - side_margin.top - side_margin.bottom;
+  side_width = (width / 3) - side_margin.left - side_margin.right,
+  side_height = (height / 3) - side_margin.top - side_margin.bottom;
 
 const side_chart = d3.select("div#side_chart")
   .append("svg")
