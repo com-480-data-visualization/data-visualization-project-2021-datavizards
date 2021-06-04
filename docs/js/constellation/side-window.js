@@ -2,12 +2,12 @@ function open_side_window(data) {
   document.getElementById("side_window").style.width = `${width / 3}px`;
   document.getElementById("side-title").textContent = `${toTitles(data.source.id)} x ${toTitles(data.target.id)}`;
 
-  var data_ = data.title.map(function (title, i) {
+  var relationshipStats = data.title.map(function (title, i) {
     return [title, new Date(data.year[i], 0, 1), data.budget[i], data.revenue[i], data.imdb_rating[i]];
   });
 
-  data_.sort(function(a, b) { return a[1] - b[1] })
-  var groups = d3.map(data_, function(d) { return (d[0]) }).keys()
+  relationshipStats.sort(function(a, b) { return a[1] - b[1] })
+  var groups = d3.map(relationshipStats, function(d) { return (d[0]) }).keys()
   var subgroups = [2, 3]
 
   // Add X axis
@@ -23,7 +23,7 @@ function open_side_window(data) {
 
   // Y axis
   var y = d3.scaleLinear()
-    .domain([0, d3.max(data_, function(d) { return Math.max(d[2], d[3]); })])
+    .domain([0, d3.max(relationshipStats, function(d) { return Math.max(d[2], d[3]); })])
     .range([side_height, 0]);
   side_y.call(d3.axisLeft(y).tickFormat(d3.format("($.2s")));
 
@@ -41,13 +41,13 @@ function open_side_window(data) {
     .domain(subgroups)
     .range(['lightpink','lightskyblue'])
 
-  side_data.selectAll(".bar-group").data(data_).exit().remove();
+  side_data.selectAll(".bar-group").data(relationshipStats).exit().remove();
   side_data.selectAll(".bar-group").selectAll("rect")
     .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
     .exit().remove()
   
   side_data.selectAll(".bar-group")
-    .data(data_)
+    .data(relationshipStats)
       .enter()
         .append("g").attr("class", "bar-group")
       .selectAll("rect")
@@ -79,7 +79,7 @@ function open_side_window(data) {
         .attr("opacity", '0.8');
 
 
-  labels = side_data.selectAll("text").data(data_);
+  labels = side_data.selectAll("text").data(relationshipStats);
   labels.exit().remove();
   labels.enter().append("text")
       
@@ -93,13 +93,13 @@ function open_side_window(data) {
     .attr("font-size", "12px")
     .style("text-anchor", function(d) { return x(d[1]) < side_width/2 ? "start" : "end"});
 
-  circles = side_data.selectAll("circle").data(data_);
+  circles = side_data.selectAll("circle").data(relationshipStats);
   circles.exit().remove();
   circles.enter()
     .append("circle")
     .attr("r", 0);
 
-  circles = side_data.selectAll("circle").data(data_);
+  circles = side_data.selectAll("circle").data(relationshipStats);
   circles.transition()
     .duration(500)
     .attr("fill", "darkgoldenrod")
@@ -107,8 +107,8 @@ function open_side_window(data) {
     .attr("cy", function (d) { return rating(d[4]) })
     .attr("r", 4);
 
-  side_data.selectAll("path").data([data_], function(d) { return d[4] }).exit().remove();
-  line = side_data.selectAll("path").data([data_], function(d) { return d[4] });
+  side_data.selectAll("path").data([relationshipStats], function(d) { return d[4] }).exit().remove();
+  line = side_data.selectAll("path").data([relationshipStats], function(d) { return d[4] });
   line
     .enter()
     .append("path")
