@@ -2,16 +2,16 @@ function open_side_window(data) {
   document.getElementById("side_window").style.width = `${width / 3}px`;
   document.getElementById("side-title").textContent = `${toTitles(data.source.id)} x ${toTitles(data.target.id)}`;
 
-  var relationshipStats = data.title.map(function (title, i) {
+  let relationshipStats = data.title.map(function (title, i) {
     return [title, new Date(data.year[i], 0, 1), data.budget[i], data.revenue[i], data.imdb_rating[i]];
   });
 
   relationshipStats.sort(function(a, b) { return a[1] - b[1] })
-  var groups = d3.map(relationshipStats, function(d) { return (d[0]) }).keys()
-  var subgroups = [2, 3]
+  let groups = d3.map(relationshipStats, function(d) { return (d[0]) }).keys()
+  let subgroups = [2, 3]
 
   // Add X axis
-  var x = d3.scaleBand()
+  let x = d3.scaleBand()
     .domain(groups)
     .range([0, side_width])
     .padding(.2);
@@ -22,22 +22,22 @@ function open_side_window(data) {
       .style("text-anchor", "end");
 
   // Y axis
-  var y = d3.scaleLinear()
+  let y = d3.scaleLinear()
     .domain([0, d3.max(relationshipStats, function(d) { return Math.max(d[2], d[3]); })])
     .range([side_height, 0]);
   side_y.call(d3.axisLeft(y).tickFormat(d3.format("($.2s")));
 
    // Add Y axis
-  var rating = d3.scaleLinear()
+  let rating = d3.scaleLinear()
     .domain([0, 10])
     .range([side_height, 0]);
 
-  var xSubgroup = d3.scaleBand()
+  let xSubgroup = d3.scaleBand()
     .domain(subgroups)
     .range([0, x.bandwidth()])
     .padding([0.05])
 
-  var color = d3.scaleOrdinal()
+  let color = d3.scaleOrdinal()
     .domain(subgroups)
     .range(['lightpink','lightskyblue'])
 
@@ -123,7 +123,7 @@ function open_side_window(data) {
       .y(function(d) { return rating(d[4]) })
       )
 
-  var max_height = 0;
+  let max_height = 0;
   side_x.selectAll('.tick').each(function() {
     if (this.getBBox().height > max_height) 
       max_height = this.getBBox().height;
@@ -133,10 +133,10 @@ function open_side_window(data) {
   
   document.getElementById("side_window").style.height = `${side_height + side_margin.top + side_margin.bottom + max_height + 40}px`;
 
-  var legspacing = 70;
-  var legendLabels = ['budget', 'revenue']
+  let legspacing = 70;
+  let legendLabels = ['budget', 'revenue']
 
-  var legend = side_chart.selectAll(".legend")
+  let legend = side_chart.selectAll(".legend")
       .data(subgroups)
       .enter()
       .append("g")
