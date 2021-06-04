@@ -256,6 +256,10 @@ const side_y = side_chart.append("g")
 
 const side_data = side_chart.append("g");
 
+var tooltip = d3.select("body").append("div")	
+  .attr("class", "tooltip")				
+  .style("opacity", 0);
+
 function toTitles(s){ return s.replace(/\w\S*/g, function(t) { return t.charAt(0).toUpperCase() + t.substr(1).toLowerCase(); }); }
 
 /* Set the width of the sidebar to 250px (show it) */
@@ -314,6 +318,19 @@ function open_side_window(data) {
       .selectAll("rect")
         .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
         .enter().append("rect")
+        .on("mouseover", function(d) {		
+          tooltip.transition()		
+              .duration(200)		
+              .style("opacity", .9);		
+              tooltip	.html(d3.format("($.2s")(d.value))	
+              .style("left", (d3.event.pageX) + "px")		
+              .style("top", (d3.event.pageY - 28) + "px");	
+          })					
+      .on("mouseout", function(d) {		
+        tooltip.transition()		
+              .duration(500)		
+              .style("opacity", 0);	
+      });
 
   side_data.selectAll(".bar-group")
     .transition().duration(500)

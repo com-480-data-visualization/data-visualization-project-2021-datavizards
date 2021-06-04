@@ -61,3 +61,16 @@ text {
     background-color: #FAFAFA;
     color: black;
 }
+
+div.tooltip {	
+  position: absolute;			
+  text-align: center;			
+  padding: 5px;				
+  font: 12px sans-serif;		
+  background: white;	
+  border: 1px;
+  border-style: solid;
+  border-color: black;	
+  border-radius: 0px 0px 8px 0px;
+  pointer-events: none;			
+}
