@@ -355,7 +355,7 @@ function open_side_window(data) {
     .attr("cy", function (d) { return rating(d[4]) })
     .attr("r", 4);
 
-    side_data.selectAll("path").data([data_], function(d) { return d[4] }).exit().remove();
+  side_data.selectAll("path").data([data_], function(d) { return d[4] }).exit().remove();
   line = side_data.selectAll("path").data([data_], function(d) { return d[4] });
   line
     .enter()
@@ -398,6 +398,12 @@ function open_side_window(data) {
       })
       .attr("y", -30);
 
+  legend.append("circle")
+      .attr("fill", "darkgoldenrod")
+      .attr("r", 4)
+      .attr("cx", 2 * legspacing - 20)
+      .attr("cy", -22);
+
   legend.append("text")
       .attr("class", "label")
       .attr("x", function (d, i) {
@@ -408,6 +414,19 @@ function open_side_window(data) {
       .text(function (d, i) {
           return labels[i];
       });
+
+  legend.append("text")
+      .attr("class", "label")
+      .attr("x", 2 * legspacing - 10)
+      .attr("y", -18)
+      .attr("text-anchor", "start")
+      .text('IMDb Rating');
+
+  side_data.selectAll(".bar-group, .place-label, circle, path").sort(function(d1, d2) {
+    if (d1.type === d2.type)
+        return 0;
+    return d1.type === ".bar-group" ? -1 : 1;
+  });
 }
 
 /* Set the width of the sidebar to 0 (hide it) */
