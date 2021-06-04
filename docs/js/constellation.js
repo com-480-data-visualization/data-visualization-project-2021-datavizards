@@ -88,13 +88,13 @@ d3.json("result.json", (error, graph) => {
     .style("font-family", "sans-serif")
     .style("font-size", "0.6em")
     .style("fill", text_color)
-    .text(node => node.id);
+    .text(node => toTitles(node.id));
 
   // Used to display the name of the node (director / actor) on hover
-  nodes.append("title").text(node => node.id);
+  nodes.append("title").text(node => toTitles(node.id));
 
   // Do the same for links, but display movies count
-  links.append("title").text(link => link.counts);
+  links.append("title").text(link => link.counts.toString() + " movies");
 
   // --- nodes ---
   nodes.on('mouseover', selectedNode => {
@@ -256,8 +256,6 @@ const side_y = side_chart.append("g")
 
 const side_data = side_chart.append("g");
 
-function toTitles(s){ return s.replace(/\w\S*/g, function(t) { return t.charAt(0).toUpperCase() + t.substr(1).toLowerCase(); }); }
-
 /* Set the width of the sidebar to 250px (show it) */
 function open_side_window(data) {
   document.getElementById("side_window").style.width = `${width / 3}px`;
@@ -413,4 +411,9 @@ function open_side_window(data) {
 /* Set the width of the sidebar to 0 (hide it) */
 function close_side_window() {
   document.getElementById("side_window").style.width = "0";
+}
+
+// Helper functions
+function toTitles(s) {
+  return s.replace(/\w\S*/g, function(t) { return t.charAt(0).toUpperCase() + t.substr(1).toLowerCase(); });
 }
