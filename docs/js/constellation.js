@@ -227,17 +227,6 @@ function drag_end(d) {
   d.fy = null;
 }
 
-// function expandLink(d) {
-//   d3.event.stopPropagation();
-//   var i;
-//   for (i = 1; i < d.counts, i++) {
-//     links.append(this);
-//   }
-//   // need to remove this object from data
-//   // d3.select(this)
-//   //   .remove();
-// }
-
 // Construct side-window chart svg
 const side_margin = { top: 51, right: 20, bottom: 30, left: 50 },
   side_width = (width / 3) - side_margin.left - side_margin.right,
