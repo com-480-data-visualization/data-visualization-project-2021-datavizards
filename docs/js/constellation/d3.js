@@ -190,6 +190,6 @@ const side_y = side_chart.append("g")
 const side_data = side_chart.append("g");
 
 // Tooltip to display statistics about columns in the animation.
-var tooltip = d3.select("body").append("div")	
+let tooltip = d3.select("body").append("div")	
   .attr("class", "tooltip")				
   .style("opacity", 0);
