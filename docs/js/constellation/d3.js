@@ -1,4 +1,6 @@
-// Constants
+/////////////////////////////////////////////////////
+///////////////////// Constants /////////////////////
+/////////////////////////////////////////////////////
 
 // We have set a 2px border around the SVG delimit where the animation starts and ends (see constellation.css).
 // 
@@ -46,6 +48,10 @@ const simulation = d3.forceSimulation()
 const g = svg.append("g")
   .attr("class", "everything");
 
+/////////////////////////////////////////////////////
+//// Constellation (graph on the left) //////////////
+/////////////////////////////////////////////////////
+
 // Graph has two keys: "nodes" and "links"
 d3.json("result.json", (error, graph) => {
   if (error)
@@ -59,15 +65,15 @@ d3.json("result.json", (error, graph) => {
     .data(graph.links)
     .enter().append("line")
     .attr("stroke", default_color)
-    .attr("stroke-width", function (d) { return Math.sqrt(6 * d.counts); }); // thickness based on number of movies done
+    .attr("stroke-width", d => Math.sqrt(6 * d.counts)); // thickness based on number of movies done
 
   // The nodes we see on the graph
   const nodes = g.append("g").attr("class", "nodes").selectAll("g")
     .data(graph.nodes)
     .enter().append("circle")
-    .attr("r", function (d) { return 7.5 / Math.sqrt(d.group); }) // radius based on group - director / actor
+    .attr("r", d => 7.5 / Math.sqrt(d.group))                            // radius based on group (i.e. director or actor)
     .attr("stroke", "white")
-    .attr("fill", function (d) { return (d.group == '1') ? director_color : actor_color; })    // colour based on group - director / actor
+    .attr("fill", d => d.group == '1' ? director_color : actor_color)    // color based on group (i.e. director or actor)
     .call(d3.drag()
       .on("start", drag_start)
       .on("drag", dragged)
@@ -135,99 +141,40 @@ d3.json("result.json", (error, graph) => {
     .on("click", selectedLink => { open_side_window(selectedLink) });
 
   simulation.nodes(graph.nodes)
-    .on("tick", ticked);
+    .on("tick", () => {
+      nodes.attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+
+      links.attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      text.attr("transform", d => "translate(" + d.x + "," + d.y + ")");
+    });
 
   simulation.force("link")
     .links(graph.links);
 
-  function ticked() {
-    nodes.attr("cx", d => d.x)
-      .attr("cy", d => d.y);
-
-    links.attr("x1", d => d.source.x)
-      .attr("y1", d => d.source.y)
-      .attr("x2", d => d.target.x)
-      .attr("y2", d => d.target.y);
-
-    text.attr("transform", d => "translate(" + d.x + "," + d.y + ")");
-  }
-
   // When the search bar has some new text, we trigger the search
-  d3.select("input#search").on("input", function() { highlightSearchedNodes(nodes) });
+  d3.select("input#search").on("input", () => highlightSearchedNodes(nodes));
 });
-
-// Responsible for showing which nodes have been searched for
-// 
-// transitionTime is the time (in ms) the transition from a regular node to a searched node will take.
-function highlightSearchedNodes(nodes, transitionTime = 500) {
-  // Note: We do not rely on this.value here,
-  // because we will call that function when we have no event binding to do,
-  // so "this" in that case will not point to the input.
-  // 
-  // The tradeoff here is to explicitly search for the search input in here.
-  const searchValue = d3.select("input#search").node().value.toLowerCase();
-
-    // If we didn't enter any filter or a filter that is too short: reset all nodes borders.
-  if (!searchValue || searchValue.length < 2) {
-    nodes
-      .attr("stroke", "white")
-      .style('opacity', 1)
-      .attr("stroke-width", 1);
-  } else { // Otherwise, change the border of the nodes matching the filter
-    const regularCircles  = nodes.filter(node => !node.id.includes(searchValue));
-    const filteredCircles = nodes.filter(node => node.id.includes(searchValue));
-
-    filteredCircles
-    .attr("stroke", "red")
-    .transition().duration(transitionTime)
-    .style('opacity', 1)
-    .attr("stroke-width", 3);
-
-    regularCircles
-    .attr("stroke", "white")
-    .transition() // We want the same transition for those, no matter what transitionTime is set to
-    .style('opacity', 0.5)
-    .attr("stroke-width", 1);
-  }
-}
 
 // Add zoom capabilities
 const zoom_handler = d3.zoom()
-  .on("zoom", zoom_actions)
+  .on("zoom", () => svg.select("g").attr("transform", d3.event.transform))
 
 zoom_handler(svg);
 
-// Zoom functions
-function zoom_actions() {
-  svg.select("g").attr("transform", d3.event.transform);
-}
+/////////////////////////////////////////////////////
+///// Side Window (when clicking an edge) ///////////
+/////////////////////////////////////////////////////
 
-// Dragging functions
-function drag_start(d) {
-  if (!d3.event.active)
-    simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
-
-function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
-}
-
-function drag_end(d) {
-  if (!d3.event.active)
-    simulation.alphaTarget(0);
-  d.fx = null;
-  d.fy = null;
-}
-
-// Construct side-window chart svg
 const side_margin = { top: 51, right: 20, bottom: 30, left: 50 }
-
 side_width  = (width / 3) - side_margin.left - side_margin.right;
 side_height = (height / 3) - side_margin.top - side_margin.bottom;
 
+// Construct the SVG for the chart
 const side_chart = d3.select("div#side_chart")
   .append("svg")
   .attr("width", side_width + side_margin.left + side_margin.right)
