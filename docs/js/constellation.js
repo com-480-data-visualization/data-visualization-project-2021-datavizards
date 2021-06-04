@@ -19,8 +19,13 @@ const default_color   = '#f1f1f1';
 const highlight_color = '#4dfffc';
 const other_color     = '#767676';   // similar to background-color
 
-// Test color
+// Text color
 const text_color = '#dee7e7';
+
+// global data structure used to retrieve node names faster.
+// 
+// We fill it up with the help of the fillLinkedByIndex() function.
+const linkedByIndex = {};
 
 // Construct the main SVG
 const svg = d3.select("div#constellation_svg")
@@ -46,17 +51,8 @@ d3.json("result.json", (error, graph) => {
   if (error)
     throw error;
 
-  // Internal list used by isConnected().
-  const linkedByIndex = {};
-  graph.links.forEach(link => linkedByIndex[link.source + "," + link.target] = true);
-
-  function areNodesConnected(nodeA, nodeB) {
-    return linkedByIndex[nodeA.id + "," + nodeB.id] || linkedByIndex[nodeB.id + "," + nodeA.id] || nodeA.id == nodeB.id;
-  }
-
-  function isLinkConnectedToNode(link, node) {
-    return link.source === node || link.target === node
-  }
+  // We construct this list once when we receive the data from the server.
+  fillLinkedByIndex(graph);
 
   // The edges we see on the graph
   const links = g.append("g").attr("class", "links").selectAll("line")
@@ -127,7 +123,6 @@ d3.json("result.json", (error, graph) => {
 
     // Highlight all of the relevant links
     links.style('stroke', link => (link == selectedLink) ? highlight_color : other_color)
-      // .style('stroke-width', link => isLinkConnectedToNode(link, selectedNode) ? 4 : 1)  // Removed because it hinders with dynamic width
       .style('opacity', link => (link == selectedLink) ? 1 : 0.6);
   })
     .on('mouseout', () => {
