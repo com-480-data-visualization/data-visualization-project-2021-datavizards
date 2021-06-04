@@ -133,11 +133,9 @@ An animation depicting the graph network on the current skeleton version of the 
 
 ![Graph Animation](images/graph_animation.gif "Graph Animation")
 
-
 ## Milestone 3 (4th June, 5pm)
 
 **80% of the final grade**
-
 
 ## Late policy
 

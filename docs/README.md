@@ -28,9 +28,3 @@ bundle exec jekyll serve
 
 # Go to localhost:4000
 ```
-
-## Where is the code?
-
-* JS: `docs/js/constellation*.js` (there are several files)
-* CSS: `docs/_sass/constellation.scss`
-* HTML: `docs/_includes_/*.html`
