@@ -110,7 +110,7 @@ d3.json("result.json", (error, graph) => {
       // If we are in the middle of a search, we need to let the
       // highlightSearchedNodes() take care of resetting the correct
       // properties of the nodes.
-      highlightSearchedNodes(nodes);
+      highlightSearchedNodes(nodes, transitionTime=0);
 
       // Reset style for text and links after the hover is done
       text.style('opacity', 1);
@@ -161,7 +161,9 @@ d3.json("result.json", (error, graph) => {
 });
 
 // Responsible for showing which nodes have been searched for
-function highlightSearchedNodes(nodes) {
+// 
+// transitionTime is the time (in ms) the transition from a regular node to a searched node will take.
+function highlightSearchedNodes(nodes, transitionTime = 500) {
   // Note: We do not rely on this.value here,
   // because we will call that function when we have no event binding to do,
   // so "this" in that case will not point to the input.
@@ -181,13 +183,13 @@ function highlightSearchedNodes(nodes) {
 
     filteredCircles
     .attr("stroke", "red")
-    .transition().duration(1000)
+    .transition().duration(transitionTime)
     .style('opacity', 1)
     .attr("stroke-width", 3);
 
     regularCircles
     .attr("stroke", "white")
-    .transition().duration(500)
+    .transition()
     .style('opacity', 0.5)
     .attr("stroke-width", 1);
   }
