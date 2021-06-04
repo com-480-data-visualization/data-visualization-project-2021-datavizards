@@ -2,10 +2,6 @@
   stroke-opacity: 0.6;
 }
 
-.nodes circle {
-  stroke: #fff;
-}
-
 text {
   font-family: sans-serif;
 }
@@ -25,6 +21,20 @@ text {
   margin-right: auto;
   width: 90%;
   height: 800px;
+}
+
+/* Style the search box */
+#search_bar {
+  border: none;
+  /* Calc is used to be pixel-perfect with the borders (they involve a 2px displacement) */
+  margin-left: calc(5% - 2px);
+  font-size: 17px;
+}
+
+#search_bar input {
+  color: black;
+  font-size: small;
+
 }
 
 #viz {

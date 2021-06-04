@@ -70,6 +70,7 @@ d3.json("result.json", (error, graph) => {
     .data(graph.nodes)
     .enter().append("circle")
     .attr("r", function (d) { return 7.5 / Math.sqrt(d.group); }) // radius based on group - director / actor
+    .attr("stroke", "white")
     .attr("fill", function (d) { return (d.group == '1') ? director_color : actor_color; })    // colour based on group - director / actor
     .call(d3.drag()
       .on("start", drag_start)
@@ -106,8 +107,12 @@ d3.json("result.json", (error, graph) => {
       .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6);
   })
     .on('mouseout', () => {
-      // Reset style for ALL nodes and ALL links
-      nodes.style('opacity', 1);
+      // If we are in the middle of a search, we need to let the
+      // highlightSearchedNodes() take care of resetting the correct
+      // properties of the nodes.
+      highlightSearchedNodes(nodes);
+
+      // Reset style for text and links after the hover is done
       text.style('opacity', 1);
       links.style('stroke', default_color)
         .style('opacity', 0.6);
@@ -150,7 +155,43 @@ d3.json("result.json", (error, graph) => {
 
     text.attr("transform", d => "translate(" + d.x + "," + d.y + ")");
   }
+
+  // When the search bar has some new text, we trigger the search
+  d3.select("input#search").on("input", function() { highlightSearchedNodes(nodes) });
 });
+
+// Responsible for showing which nodes have been searched for
+function highlightSearchedNodes(nodes) {
+  // Note: We do not rely on this.value here,
+  // because we will call that function when we have no event binding to do,
+  // so "this" in that case will not point to the input.
+  // 
+  // The tradeoff here is to explicitly search for the search input in here.
+  const searchValue = d3.select("input#search").node().value.toLowerCase();
+
+    // If we didn't enter any filter or a filter that is too short: reset all nodes borders.
+  if (!searchValue || searchValue.length < 2) {
+    nodes
+      .attr("stroke", "white")
+      .style('opacity', 1)
+      .attr("stroke-width", 1);
+  } else { // Otherwise, change the border of the nodes matching the filter
+    const regularCircles  = nodes.filter(node => !node.id.includes(searchValue));
+    const filteredCircles = nodes.filter(node => node.id.includes(searchValue));
+
+    filteredCircles
+    .attr("stroke", "red")
+    .transition().duration(1000)
+    .style('opacity', 1)
+    .attr("stroke-width", 3);
+
+    regularCircles
+    .attr("stroke", "white")
+    .transition().duration(500)
+    .style('opacity', 0.5)
+    .attr("stroke-width", 1);
+  }
+}
 
 // Add zoom capabilities
 const zoom_handler = d3.zoom()

@@ -8,16 +8,21 @@
 <body>
   <!-- We mimic the structure we have on the main site.
        This is mainly so that the CSS works :) -->
-  <div id="constellation">
-    <div id="constellation_svg">
-      <div id="side_window">
-        <div class="modal-header">
-          <button type="button" class="close" onclick="close_side_window()" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h5 class="modal-title" id="side-title">Right Sidebar</h5>
+  <div id="viz">
+    <div id="search_bar">
+      <input id="search" type="text" placeholder="e.g. Clint"><i class="fa fa-search"></i>
+    </div>
+    <div id="constellation">
+      <div id="constellation_svg">
+        <div id="side_window">
+          <div class="modal-header">
+            <button type="button" class="close" onclick="close_side_window()" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title" id="side-title">Right Sidebar</h5>
+          </div>
+          <div id="side_chart"></div>
         </div>
-        <div id="side_chart"></div>
       </div>
     </div>
   </div>
