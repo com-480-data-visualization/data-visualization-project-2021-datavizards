@@ -99,11 +99,11 @@ d3.json("result.json", (error, graph) => {
   // --- nodes ---
   nodes.on('mouseover', selectedNode => {
     // Highlight the selected node and all of the neighboring nodes
-    nodes.transition().style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
-    text.transition().style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
+    nodes.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
+    text.style('opacity', linkedNode => areNodesConnected(selectedNode, linkedNode) ? 1 : 0.1);
 
     // Highlight all of the relevant links
-    links.transition().style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? highlight_color : other_color)
+    links.style('stroke', link => isLinkConnectedToNode(link, selectedNode) ? highlight_color : other_color)
       .style('opacity', link => isLinkConnectedToNode(link, selectedNode) ? 1 : 0.6);
   })
     .on('mouseout', () => {
@@ -113,8 +113,8 @@ d3.json("result.json", (error, graph) => {
       highlightSearchedNodes(nodes, transitionTime=0);
 
       // Reset style for text and links after the hover is done
-      text.transition().style('opacity', 1);
-      links.transition()
+      text.style('opacity', 1);
+      links
         .style('stroke', default_color)
         .style('opacity', 0.6);
     });
