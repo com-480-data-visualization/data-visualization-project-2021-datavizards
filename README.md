@@ -140,7 +140,7 @@ An animation depicting the graph network on the current skeleton version of the 
 We present our final project for the director-actor constellation. Please click the following links to view the submissions:
 - The [visualization website](https://com-480-data-visualization.github.io/data-visualization-project-2021-datavizards)
 - The [process book](process-book.pdf)
-- The screencast video
+- The [screencast video](https://youtu.be/fyvyC9I-qCU)
 
 ## Late policy
 
